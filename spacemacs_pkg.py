@@ -90,16 +90,6 @@ def check_built_in(string):
         built_in = False
     return built_in
 
-def parse_complex_pkgs_list(string):
-    """
-    Return a dictionary with package name as a key and boolean representing
-    built-in status as the key's value.
-
-    Input:  string
-    Output: dictionary
-    """
-    return {string.split()[0].strip('('): check_built_in(string)}
-
 def get_layer(path):
     """
     Return layer name (e. g. '+emacs/org').
@@ -114,31 +104,42 @@ def get_layer(path):
             return "/".join(path_lst[c:-1])
         c += 1
 
-def get_pkgs_list(strings):
+def parse_complex_pkgs_list(string, path):
+    """
+    Return a dictionary with package name as a key and a list containing
+    boolean representing built-in status and layer name as the key's value.
+
+    Input:  string, string
+    Output: dictionary
+    """
+    return {string.split()[0].strip('('):
+            [check_built_in(string), get_layer(path)]}
+
+def get_pkgs_list(strings, path):
     """
     Return a list of dictionaries, each of which has a form
-    {package_name: built-in_status}.
+    {package_name: [built-in_status, layer]}.
 
-    Input:  list of strings
+    Input:  list of strings, string
     Output: list of dictionaries
     """
     if len(strings) == 1:
         return [{strings[0][strings[0].find("'"):].strip("'()"):
-                check_built_in(strings)}]
+                [check_built_in(strings), get_layer(path)]}]
     else:
         pkgs_list = []
         multiline = ''
         alpha = re.compile("[a-z]")
         for i in strings[2:-1]:
             if alpha.match(i[0]):
-                pkgs_list.append(parse_complex_pkgs_list(i))
+                pkgs_list.append(parse_complex_pkgs_list(i, path))
             if i[0] == '(' and not count_parens(i):
-                pkgs_list.append(parse_complex_pkgs_list(i))
+                pkgs_list.append(parse_complex_pkgs_list(i, path))
             if i[0] == '(' and count_parens(i):
                 multiline += i
             elif multiline and count_parens(i):
                 multiline += ' ' + i
-                pkgs_list.append(parse_complex_pkgs_list(multiline))
+                pkgs_list.append(parse_complex_pkgs_list(multiline, path))
                 multiline = ''
             else:
                 multiline += ' ' + i
@@ -159,5 +160,5 @@ if __name__ == '__main__':
         print(filename)
         with open(filename) as f: content = f.read().split('\n')
         pkg_declaration = get_pkg_declaration(strip_comments(content))
-        pkgs_list = get_pkgs_list(pkg_declaration)
+        pkgs_list = get_pkgs_list(pkg_declaration, filename)
         print(pkgs_list)
