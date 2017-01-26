@@ -145,6 +145,28 @@ def get_pkgs_list(strings, path):
                 multiline += ' ' + i
         return pkgs_list
 
+def flat_list(lst):
+    """
+    Return flat dictionary produced from a list of lists of dictionaries.
+    Duplicates are cleverly removed.
+
+    Input:  list
+    Output: dictionary
+    """
+    result = {}
+    keys_in_result = []
+    for sublst in lst:
+        if sublst:
+            for item in sublst:
+                pkg = list(item.keys())[0]
+                if pkg in keys_in_result:
+                    result[pkg] = [result[pkg][0] or item[pkg][0],
+                                   result[pkg][1] + ', ' + item[pkg][1]]
+                else:
+                    keys_in_result.append(pkg)
+                    result = {**result, **item}
+    return result
+
 
 if __name__ == '__main__':
     import argparse
@@ -157,10 +179,10 @@ if __name__ == '__main__':
     args = cl_parser.parse_args()
 
     path = args.path + 'layers/**/packages.el'
-
+    pkgs_in_layers = []
     for fname in glob.iglob(path, recursive=True):
-        print(fname)
         with open(fname) as f: content = f.read().split('\n')
         pkg_declaration = get_pkg_declaration(strip_comments(content))
         pkgs_list = get_pkgs_list(pkg_declaration, fname)
-        print(pkgs_list)
+        pkgs_in_layers.append(pkgs_list)
+    print(flat_list(pkgs_in_layers))
