@@ -129,7 +129,7 @@ def get_pkgs_list(strings, path):
     else:
         pkgs_list = []
         multiline = ''
-        alpha = re.compile("[a-z]")
+        alpha = re.compile("[a-z0-9\-]")
         for i in strings[2:-1]:
             if alpha.match(i[0]):
                 pkgs_list.append(parse_complex_pkgs_list(i, path))
@@ -141,7 +141,7 @@ def get_pkgs_list(strings, path):
                 multiline += ' ' + i
                 pkgs_list.append(parse_complex_pkgs_list(multiline, path))
                 multiline = ''
-            else:
+            elif multiline:
                 multiline += ' ' + i
         return pkgs_list
 
