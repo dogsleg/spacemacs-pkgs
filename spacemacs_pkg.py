@@ -156,9 +156,11 @@ if __name__ == '__main__':
     cl_parser.add_argument('path', help='path to Spacemacs source code')
     args = cl_parser.parse_args()
 
-    for filename in glob.iglob(args.path + 'layers/**/packages.el', recursive=True):
-        print(filename)
-        with open(filename) as f: content = f.read().split('\n')
+    path = args.path + 'layers/**/packages.el'
+
+    for fname in glob.iglob(path, recursive=True):
+        print(fname)
+        with open(fname) as f: content = f.read().split('\n')
         pkg_declaration = get_pkg_declaration(strip_comments(content))
-        pkgs_list = get_pkgs_list(pkg_declaration, filename)
+        pkgs_list = get_pkgs_list(pkg_declaration, fname)
         print(pkgs_list)
