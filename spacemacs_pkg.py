@@ -100,6 +100,20 @@ def parse_complex_pkgs_list(string):
     """
     return {string.split()[0].strip('('): check_built_in(string)}
 
+def get_layer(path):
+    """
+    Return layer name (e. g. '+emacs/org').
+
+    Input:  string
+    Output: string
+    """
+    path_lst = path.split('/')
+    c = 0
+    while c < len(path_lst):
+        if '+' in path_lst[c]:
+            return "/".join(path_lst[c:-1])
+        c += 1
+
 def get_pkgs_list(strings):
     """
     Return a list of dictionaries, each of which has a form
