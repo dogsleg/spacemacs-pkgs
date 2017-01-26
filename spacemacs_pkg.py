@@ -138,8 +138,7 @@ if __name__ == '__main__':
     # Parsing command-line arguments
     cl_parser = argparse.ArgumentParser(description='Get a list of Emacs \
                                         packages from Spacemacs source.')
-    cl_parser.add_argument('path', default='./',
-                           help='path to Spacemacs source code')
+    cl_parser.add_argument('path', help='path to Spacemacs source code')
     args = cl_parser.parse_args()
 
     for filename in glob.iglob(args.path + 'layers/**/packages.el', recursive=True):
