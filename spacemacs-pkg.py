@@ -109,8 +109,8 @@ def get_pkgs_list(strings):
     Output: list of dictionaries
     """
     if len(strings) == 1:
-        return {strings[0][strings[0].find("'"):].strip("'()"):
-                check_built_in(strings)}
+        return [{strings[0][strings[0].find("'"):].strip("'()"):
+                check_built_in(strings)}]
     else:
         pkgs_list = []
         multiline = ''
