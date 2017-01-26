@@ -142,7 +142,7 @@ if __name__ == '__main__':
                            help='path to Spacemacs source code')
     args = cl_parser.parse_args()
 
-    for filename in glob.iglob(args.path + '**/packages.el', recursive=True):
+    for filename in glob.iglob(args.path + 'layers/**/packages.el', recursive=True):
         print(filename)
         with open(filename) as f: content = f.read().split('\n')
         pkg_declaration = get_pkg_declaration(strip_comments(content))
