@@ -185,4 +185,10 @@ if __name__ == '__main__':
         pkg_declaration = get_pkg_declaration(strip_comments(content))
         pkgs_list = get_pkgs_list(pkg_declaration, fname)
         pkgs_in_layers.append(pkgs_list)
-    print(flat_list(pkgs_in_layers))
+
+    all_pkgs = flat_list(pkgs_in_layers)
+    print('[[!table  data="""')
+    print('Package|Built-in|Layers')
+    for item in sorted(list(all_pkgs)):
+        print(item + '|' + str(all_pkgs[item][0]) + '|' + all_pkgs[item][1])
+    print('"""]]')
