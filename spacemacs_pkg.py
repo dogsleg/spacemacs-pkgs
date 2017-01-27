@@ -225,5 +225,5 @@ if __name__ == '__main__':
         if item in packaged:
             print(item + '|' + all_pkgs[item][1] + '|' + '**DONE**')
         elif not all_pkgs[item][0]:
-            print(item + '|' + all_pkgs[item][1] + '|' + 'TODO')
+            print(item + '|' + all_pkgs[item][1] + '|' + 'todo')
     print('"""]]')
