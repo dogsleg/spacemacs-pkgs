@@ -171,6 +171,8 @@ def flat_list(lst):
 if __name__ == '__main__':
     import argparse
     import glob
+    import os
+    import sys
 
     # Parsing command-line arguments
     cl_parser = argparse.ArgumentParser(description='Get a list of Emacs \
@@ -185,6 +187,12 @@ if __name__ == '__main__':
         pkg_declaration = get_pkg_declaration(strip_comments(content))
         pkgs_list = get_pkgs_list(pkg_declaration, fname)
         pkgs_in_layers.append(pkgs_list)
+
+    if os.path.isfile('pkg-emacsen-addons'):
+        with open('pkg-emacsen-addons') as f: packaged = f.read().split('\n')
+    else:
+        sys.stdout.write("Please, generate pkg-emacsen-addons first. See README.md\n")
+        sys.exit(1)
 
     all_pkgs = flat_list(pkgs_in_layers)
     print('[[!table  data="""')
