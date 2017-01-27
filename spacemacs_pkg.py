@@ -167,6 +167,26 @@ def flat_list(lst):
                     result = {**result, **item}
     return result
 
+def clean_pkg_emacsen_lst(lst):
+    """
+    Return a list with `dh-elpa`, `dh-make-elpa`, `*-doc` removed, and `elpa-`
+    part stripped.
+
+    Input:  list
+    Output: list
+    """
+    clear_lst = []
+    elpa = re.compile("elpa-.*")
+    doc = re.compile(".*-doc")
+    for i in lst:
+        if i == 'dh-elpa' or i == 'dh-make-elpa' or doc.match(i):
+            pass
+        elif not elpa.match(i):
+            clear_lst.append(i)
+        else:
+            clear_lst.append(i[5:])
+    return clear_lst
+
 
 if __name__ == '__main__':
     import argparse
@@ -189,10 +209,13 @@ if __name__ == '__main__':
         pkgs_in_layers.append(pkgs_list)
 
     if os.path.isfile('pkg-emacsen-addons'):
-        with open('pkg-emacsen-addons') as f: packaged = f.read().split('\n')
+        with open('pkg-emacsen-addons') as f:
+            packaged = f.read()[:-1].split('\n')
     else:
         sys.stdout.write("Please, generate pkg-emacsen-addons first. See README.md\n")
         sys.exit(1)
+
+    packaged = clean_pkg_emacsen_lst(packaged)
 
     all_pkgs = flat_list(pkgs_in_layers)
     print('[[!table  data="""')
