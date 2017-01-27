@@ -180,7 +180,7 @@ if __name__ == '__main__':
     cl_parser.add_argument('path', help='path to Spacemacs source code')
     args = cl_parser.parse_args()
 
-    path = args.path + 'layers/**/packages.el'
+    path = args.path + '/layers/**/packages.el'
     pkgs_in_layers = []
     for fname in glob.iglob(path, recursive=True):
         with open(fname) as f: content = f.read().split('\n')
