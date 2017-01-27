@@ -220,7 +220,10 @@ if __name__ == '__main__':
 
     all_pkgs = flat_list(pkgs_in_layers)
     print('[[!table  data="""')
-    print('Package|Built-in|Layers')
+    print('Package|Layers|Packaged by pkg-emacsen-addons?')
     for item in sorted(list(all_pkgs)):
-        print(item + '|' + str(all_pkgs[item][0]) + '|' + all_pkgs[item][1])
+        if item in packaged:
+            print(item + '|' + all_pkgs[item][1] + '|' + '**DONE**')
+        elif not all_pkgs[item][0]:
+            print(item + '|' + all_pkgs[item][1] + '|' + 'TODO')
     print('"""]]')
