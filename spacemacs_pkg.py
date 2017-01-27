@@ -201,12 +201,6 @@ if __name__ == '__main__':
     args = cl_parser.parse_args()
 
     path = args.path + '/layers/**/packages.el'
-    pkgs_in_layers = []
-    for fname in glob.iglob(path, recursive=True):
-        with open(fname) as f: content = f.read().split('\n')
-        pkg_declaration = get_pkg_declaration(strip_comments(content))
-        pkgs_list = get_pkgs_list(pkg_declaration, fname)
-        pkgs_in_layers.append(pkgs_list)
 
     if os.path.isfile('pkg-emacsen-addons'):
         with open('pkg-emacsen-addons') as f:
@@ -216,6 +210,13 @@ if __name__ == '__main__':
         sys.exit(1)
 
     packaged = clean_pkg_emacsen_lst(packaged)
+
+    pkgs_in_layers = []
+    for fname in glob.iglob(path, recursive=True):
+        with open(fname) as f: content = f.read().split('\n')
+        pkg_declaration = get_pkg_declaration(strip_comments(content))
+        pkgs_list = get_pkgs_list(pkg_declaration, fname)
+        pkgs_in_layers.append(pkgs_list)
 
     all_pkgs = flat_list(pkgs_in_layers)
     print('[[!table  data="""')
