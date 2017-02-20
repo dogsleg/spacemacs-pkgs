@@ -1,5 +1,5 @@
 [[!table  data="""
-Package|Layers|Packaged by pkg-emacsen-addons?
+Package|Packaged by pkg-emacsen-addons?|Layers
 2048-game|todo|+fun/games
 ac-ispell|todo|+completion/auto-completion
 ace-jump-helm-line|todo|+completion/helm
