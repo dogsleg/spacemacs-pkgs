@@ -223,7 +223,7 @@ if __name__ == '__main__':
     print('Package|Layers|Packaged by pkg-emacsen-addons?')
     for item in sorted(list(all_pkgs)):
         if item in packaged:
-            print(item + '|' + all_pkgs[item][1] + '|' + '**DONE**')
+            print(item + '|' + '**DONE**' + '|' + all_pkgs[item][1])
         elif not all_pkgs[item][0]:
-            print(item + '|' + all_pkgs[item][1] + '|' + 'todo')
+            print(item + '|' +  'todo' + '|' + all_pkgs[item][1])
     print('"""]]')
