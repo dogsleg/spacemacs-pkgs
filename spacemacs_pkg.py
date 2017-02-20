@@ -220,7 +220,7 @@ if __name__ == '__main__':
 
     all_pkgs = flat_list(pkgs_in_layers)
     print('[[!table  data="""')
-    print('Package|Layers|Packaged by pkg-emacsen-addons?')
+    print('Package|Packaged by pkg-emacsen-addons?|Layers')
     for item in sorted(list(all_pkgs)):
         if item in packaged:
             print(item + '|' + '**DONE**' + '|' + all_pkgs[item][1])
