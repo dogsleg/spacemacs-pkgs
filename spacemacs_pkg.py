@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-################################################################################
+###############################################################################
 # spacemacs-pkgs -- get a list of Emacs packages from Spacemacs source.
-################################################################################
+###############################################################################
 # This script is written to help with packaging Emacs packages used in
 # Spacemacs for Debian.
 #
 # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=828154
-################################################################################
+###############################################################################
 # Copyright (C) 2017 Lev Lamberov
 #
 # This program is free software: you can redistribute it and/or modify
@@ -21,11 +21,16 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-################################################################################
+###############################################################################
+
+import argparse
+import glob
+import os
+import re
+import sys
 
 __version__ = '0.0.2'
 
-import re
 
 def count_parens(string):
     """
@@ -42,6 +47,7 @@ def count_parens(string):
             parens -= 1
     return parens
 
+
 def strip_comments(strings):
     """
     Return all the strings except comment lines.
@@ -55,6 +61,7 @@ def strip_comments(strings):
         if not comment.match(i):
             result.append(i.strip())
     return result
+
 
 def get_pkg_declaration(strings):
     """
@@ -77,6 +84,7 @@ def get_pkg_declaration(strings):
                 break
     return pkg_declaration
 
+
 def check_built_in(string):
     """
     Return True if a package in a given string is built-in, False otherwise.
@@ -89,6 +97,7 @@ def check_built_in(string):
     else:
         built_in = False
     return built_in
+
 
 def get_layer(path):
     """
@@ -104,6 +113,7 @@ def get_layer(path):
             return "/".join(path_lst[c:-1])
         c += 1
 
+
 def parse_complex_pkgs_list(string, path):
     """
     Return a dictionary with package name as a key and a list containing
@@ -114,6 +124,7 @@ def parse_complex_pkgs_list(string, path):
     """
     return {string.split()[0].strip('('):
             [check_built_in(string), get_layer(path)]}
+
 
 def get_pkgs_list(strings, path):
     """
@@ -145,6 +156,7 @@ def get_pkgs_list(strings, path):
                 multiline += ' ' + i
         return pkgs_list
 
+
 def flat_list(lst):
     """
     Return flat dictionary produced from a list of lists of dictionaries.
@@ -166,6 +178,7 @@ def flat_list(lst):
                     keys_in_result.append(pkg)
                     result = {**result, **item}
     return result
+
 
 def clean_pkg_emacsen_lst(lst):
     """
@@ -189,10 +202,6 @@ def clean_pkg_emacsen_lst(lst):
 
 
 if __name__ == '__main__':
-    import argparse
-    import glob
-    import os
-    import sys
 
     # Parsing command-line arguments
     cl_parser = argparse.ArgumentParser(description='Get a list of Emacs \
@@ -206,14 +215,15 @@ if __name__ == '__main__':
         with open('pkg-emacsen-addons') as f:
             packaged = f.read()[:-1].split('\n')
     else:
-        sys.stdout.write("Please, generate pkg-emacsen-addons first. See README.md\n")
+        sys.stdout.write("Please, generate pkg-emacsen-addons first.\n")
         sys.exit(1)
 
     packaged = clean_pkg_emacsen_lst(packaged)
 
     pkgs_in_layers = []
     for fname in glob.iglob(path, recursive=True):
-        with open(fname) as f: content = f.read().split('\n')
+        with open(fname) as f:
+            content = f.read().split('\n')
         pkg_declaration = get_pkg_declaration(strip_comments(content))
         pkgs_list = get_pkgs_list(pkg_declaration, fname)
         pkgs_in_layers.append(pkgs_list)
@@ -225,5 +235,5 @@ if __name__ == '__main__':
         if item in packaged:
             print(item + '|' + '**DONE**' + '|' + all_pkgs[item][1])
         elif not all_pkgs[item][0]:
-            print(item + '|' +  'todo' + '|' + all_pkgs[item][1])
+            print(item + '|' + 'todo' + '|' + all_pkgs[item][1])
     print('"""]]')
