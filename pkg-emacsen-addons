@@ -16,13 +16,17 @@ elpa-company
 elpa-concurrent
 elpa-ctable
 elpa-cycle-quotes
+elpa-dash
+elpa-dash-functional
 elpa-debpaste
 elpa-deferred
 elpa-deft
 elpa-diminish
+elpa-dired-quick-sort
 elpa-discover-my-major
 elpa-ebib
 elpa-editorconfig
+elpa-el-mock
 elpa-el-x
 elpa-elfeed
 elpa-elfeed-web
@@ -31,6 +35,7 @@ elpa-engine-mode
 elpa-epc
 elpa-epl
 elpa-ert-async
+elpa-ert-expectations
 elpa-eshell-up
 elpa-evil
 elpa-evil-paredit
@@ -68,6 +73,7 @@ elpa-ido-ubiquitous
 elpa-ido-vertical-mode
 elpa-iedit
 elpa-jabber
+elpa-jinja2-mode
 elpa-key-chord
 elpa-let-alist
 elpa-linum-relative
@@ -80,6 +86,7 @@ elpa-mocker
 elpa-monokai-theme
 elpa-muse
 elpa-noflet
+elpa-nose
 elpa-openwith
 elpa-org-bullets
 elpa-paredit
@@ -99,6 +106,7 @@ elpa-projectile
 elpa-py-isort
 elpa-python-environment
 elpa-pyvenv
+elpa-qml-mode
 elpa-rainbow-delimiters
 elpa-rainbow-identifiers
 elpa-rainbow-mode
@@ -118,11 +126,13 @@ elpa-undo-tree
 elpa-use-package
 elpa-vala-mode
 elpa-vimish-fold
+elpa-visual-fill-column
 elpa-visual-regexp
 elpa-wc-mode
 elpa-which-key
 elpa-with-editor
 elpa-world-time-mode
+elpa-writegood-mode
 elpa-ws-butler
 elpa-xml-rpc
 elpa-yasnippet

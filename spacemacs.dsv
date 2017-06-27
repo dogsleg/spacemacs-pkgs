@@ -56,8 +56,9 @@ color-theme-sanityinc-solarized|todo|+themes/themes-megapack
 color-theme-sanityinc-tomorrow|todo|+themes/themes-megapack
 column-enforce-mode|todo|+spacemacs/spacemacs-editing-visual
 common-lisp-snippets|todo|+lang/common-lisp
-company|**DONE**|+os/nixos, +completion/auto-completion, +tools/shell, +tools/puppet, +tools/finance, +tools/ansible, +emacs/org, +lang/racket, +lang/ocaml, +lang/clojure, +lang/haskell, +lang/java, +lang/html, +lang/ruby, +lang/lua, +lang/latex, +lang/agda, +lang/csharp, +lang/erlang, +lang/shell-scripts, +lang/scheme, +lang/javascript, +lang/emacs-lisp, +lang/php, +lang/d, +lang/go, +lang/typescript, +lang/rust, +lang/markdown, +lang/python, +lang/elixir, +lang/elm, +chat/erc, +chat/rcirc, +frameworks/react
+company|**DONE**|+os/nixos, +completion/auto-completion, +tools/shell, +tools/puppet, +tools/finance, +tools/restclient, +tools/ansible, +emacs/org, +lang/racket, +lang/ocaml, +lang/clojure, +lang/haskell, +lang/java, +lang/shaders, +lang/html, +lang/ruby, +lang/lua, +lang/latex, +lang/agda, +lang/csharp, +lang/erlang, +lang/shell-scripts, +lang/scheme, +lang/javascript, +lang/emacs-lisp, +lang/php, +lang/d, +lang/go, +lang/typescript, +lang/rust, +lang/markdown, +lang/python, +lang/elixir, +lang/elm, +chat/erc, +chat/rcirc, +frameworks/react
 company-anaconda|todo|+lang/python
+company-ansible|todo|+tools/ansible
 company-auctex|todo|+lang/latex
 company-cabal|todo|+lang/haskell
 company-dcd|todo|+lang/d
@@ -65,9 +66,11 @@ company-emacs-eclim|todo|+lang/java
 company-emoji|todo|+emacs/org, +fun/emoji, +lang/markdown, +chat/erc, +chat/rcirc
 company-ghc|todo|+lang/haskell
 company-ghci|todo|+lang/haskell
+company-glsl|todo|+lang/shaders
 company-go|todo|+lang/go
 company-nixos-options|todo|+os/nixos
 company-quickhelp|todo|+completion/auto-completion, +lang/racket
+company-restclient|todo|+tools/restclient
 company-shell|todo|+lang/shell-scripts
 company-statistics|todo|+completion/auto-completion
 company-tern|todo|+lang/javascript, +frameworks/react
@@ -169,6 +172,7 @@ floobits|todo|+pair-programming/floobits
 flx|**DONE**|+completion/ivy
 flx-ido|**DONE**|+spacemacs/spacemacs-ui
 flycheck|**DONE**|+tools/puppet, +checkers/syntax-checking, +lang/haskell, +lang/purescript, +lang/nim, +lang/html, +lang/ruby, +lang/lua, +lang/latex, +lang/erlang, +lang/shell-scripts, +lang/javascript, +lang/emacs-lisp, +lang/swift, +lang/php, +lang/d, +lang/go, +lang/typescript, +lang/scala, +lang/rust, +lang/python, +lang/elixir, +lang/elm, +frameworks/react
+flycheck-credo|todo|+lang/elixir
 flycheck-dmd-dub|todo|+lang/d
 flycheck-elm|todo|+lang/elm
 flycheck-gometalinter|todo|+lang/go
@@ -179,11 +183,13 @@ flycheck-nim|todo|+lang/nim
 flycheck-pos-tip|todo|+checkers/syntax-checking
 flycheck-rust|todo|+lang/rust
 flycheck-ycmd|todo|+tools/ycmd
+flymd|todo|+tools/chrome
 flyspell|todo|+checkers/spell-checking, +lang/latex, +chat/rcirc
 flyspell-correct|todo|+checkers/spell-checking
 flyspell-correct-helm|todo|+checkers/spell-checking
 flyspell-correct-ivy|todo|+checkers/spell-checking
 fsharp-mode|todo|+lang/fsharp
+fuzzy|todo|+completion/auto-completion
 gandalf-theme|todo|+themes/themes-megapack
 geeknote|todo|+web-services/evernote
 geiser|**DONE**|+lang/scheme
@@ -205,7 +211,6 @@ github-browse-file|todo|+source-control/github
 github-clone|todo|+source-control/github
 github-search|todo|+source-control/github
 gitignore-mode|**DONE**|+source-control/git
-glsl-mode|todo|+lang/shaders
 gmail-message-mode|todo|+tools/chrome
 gnuplot|todo|+emacs/org
 gnus|todo|+email/gnus
@@ -241,6 +246,7 @@ helm-nixos-options|todo|+os/nixos
 helm-projectile|**DONE**|+completion/helm
 helm-pydoc|todo|+lang/python
 helm-rcirc|todo|+chat/rcirc
+helm-spacemacs-faq|todo|+completion/helm
 helm-spacemacs-help|todo|+completion/helm
 helm-spotify|todo|+web-services/spotify
 helm-swoop|todo|+completion/helm
@@ -278,7 +284,7 @@ ivy-spacemacs-help|todo|+completion/ivy
 jabber|**DONE**|+chat/jabber
 jazz-theme|todo|+themes/themes-megapack
 jbeans-theme|todo|+themes/themes-megapack
-jinja2-mode|todo|+tools/ansible
+jinja2-mode|**DONE**|+tools/ansible
 js-doc|todo|+lang/javascript, +frameworks/react
 js2-mode|todo|+lang/javascript
 js2-refactor|todo|+lang/javascript
@@ -297,6 +303,7 @@ lorem-ipsum|todo|+spacemacs/spacemacs-editing
 lua-mode|todo|+lang/lua
 lush-theme|todo|+themes/themes-megapack
 macrostep|todo|+lang/emacs-lisp
+madhat2r-theme|todo|+themes/themes-megapack
 magit|**DONE**|+source-control/git, +vim/evil-snipe, +tools/shell
 magit-gh-pulls|todo|+source-control/github
 magit-gitflow|todo|+source-control/git
@@ -325,10 +332,11 @@ nix-mode|todo|+os/nixos
 nixos-options|todo|+os/nixos
 noctilux-theme|todo|+themes/themes-megapack
 noflet|**DONE**|+lang/scala
-nose|todo|+lang/python
+nose|**DONE**|+lang/python
 nyan-mode|todo|+themes/colors
 ob-elixir|todo|+lang/elixir
 ob-http|todo|+tools/restclient
+ob-restclient|todo|+tools/restclient
 ob-sml|todo|+lang/sml
 obsidian-theme|todo|+themes/themes-megapack
 occidental-theme|todo|+themes/themes-megapack
@@ -359,7 +367,7 @@ pastels-on-dark-theme|todo|+themes/themes-megapack
 pbcopy|todo|+os/osx
 pcre2el|todo|+distributions/spacemacs-base
 pdf-tools|**DONE**|+tools/pdf-tools
-persp-mode|todo|+spacemacs/spacemacs-layouts, +completion/ivy, +emacs/org, +chat/erc, +chat/rcirc
+persp-mode|todo|+spacemacs/spacemacs-layouts, +completion/ivy, +completion/helm, +emacs/org, +chat/erc, +chat/rcirc
 phoenix-dark-mono-theme|todo|+themes/themes-megapack
 phoenix-dark-pink-theme|todo|+themes/themes-megapack
 php-auto-yasnippets|todo|+lang/php
@@ -389,7 +397,7 @@ pyenv-mode|todo|+lang/python
 pylookup|todo|+lang/python
 pytest|todo|+lang/python
 pyvenv|**DONE**|+lang/python
-qml-mode|todo|+lang/extra-langs
+qml-mode|**DONE**|+lang/extra-langs
 racer|todo|+lang/rust
 racket-mode|todo|+lang/racket
 railscasts-theme|todo|+themes/themes-megapack
@@ -406,6 +414,7 @@ rcirc-notify|todo|+chat/rcirc
 request|todo|+spacemacs/spacemacs-misc
 restart-emacs|**DONE**|+spacemacs/spacemacs-ui
 restclient|todo|+tools/restclient
+restclient-helm|todo|+tools/restclient
 reveal-in-osx-finder|todo|+os/osx
 reverse-theme|todo|+themes/themes-megapack
 robe|todo|+lang/ruby
@@ -434,10 +443,10 @@ smyx-theme|todo|+themes/themes-megapack
 soft-charcoal-theme|todo|+themes/themes-megapack
 soft-morning-theme|todo|+themes/themes-megapack
 soft-stone-theme|todo|+themes/themes-megapack
+solarized-theme|**DONE**|+themes/themes-megapack
 soothe-theme|todo|+themes/themes-megapack
 spacegray-theme|todo|+themes/themes-megapack
 spaceline|todo|+spacemacs/spacemacs-layouts, +spacemacs/spacemacs-ui-visual
-spacemacs-theme|todo|+distributions/spacemacs-base
 spacemacs-whitespace-cleanup|todo|+spacemacs/spacemacs-editing
 spotify|todo|+web-services/spotify
 spray|todo|+tools/speed-reading
@@ -448,6 +457,7 @@ stickyfunc-enhance|todo|+emacs/semantic, +lang/python
 subatomic-theme|todo|+themes/themes-megapack
 subatomic256-theme|todo|+themes/themes-megapack
 sublime-themes|todo|+themes/themes-megapack
+sudoku|todo|+fun/games
 sunny-day-theme|todo|+themes/themes-megapack
 sunshine|todo|+tools/geolocation
 swift-mode|todo|+lang/swift
