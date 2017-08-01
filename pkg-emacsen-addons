@@ -4,6 +4,7 @@ elpa-ace-link
 elpa-ace-window
 elpa-aggressive-indent
 elpa-anzu
+elpa-apiwrap
 elpa-async
 elpa-avy
 elpa-beacon
@@ -41,12 +42,15 @@ elpa-evil
 elpa-evil-paredit
 elpa-expand-region
 elpa-f
+elpa-faceup
 elpa-fill-column-indicator
 elpa-flx
 elpa-flx-ido
 elpa-flycheck
 elpa-fsm
 elpa-geiser
+elpa-ghub
+elpa-ghub+
 elpa-git-annex
 elpa-git-commit
 elpa-git-messenger
@@ -80,11 +84,15 @@ elpa-linum-relative
 elpa-magit
 elpa-magit-annex
 elpa-magit-popup
+elpa-magithub
 elpa-makey
 elpa-markdown-mode
+elpa-meson-mode
+elpa-minimap
 elpa-mocker
 elpa-monokai-theme
 elpa-muse
+elpa-no-littering
 elpa-noflet
 elpa-nose
 elpa-openwith
@@ -111,6 +119,7 @@ elpa-rainbow-delimiters
 elpa-rainbow-identifiers
 elpa-rainbow-mode
 elpa-recursive-narrow
+elpa-redtick
 elpa-restart-emacs
 elpa-rust-mode
 elpa-s
@@ -129,6 +138,7 @@ elpa-vimish-fold
 elpa-visual-fill-column
 elpa-visual-regexp
 elpa-wc-mode
+elpa-weechat
 elpa-which-key
 elpa-with-editor
 elpa-world-time-mode
