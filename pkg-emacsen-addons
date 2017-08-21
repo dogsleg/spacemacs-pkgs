@@ -15,6 +15,7 @@ elpa-buttercup
 elpa-circe
 elpa-company
 elpa-concurrent
+elpa-counsel
 elpa-ctable
 elpa-cycle-quotes
 elpa-dash
@@ -76,11 +77,14 @@ elpa-ido-completing-read+
 elpa-ido-ubiquitous
 elpa-ido-vertical-mode
 elpa-iedit
+elpa-ivy
+elpa-ivy-hydra
 elpa-jabber
 elpa-jinja2-mode
 elpa-key-chord
 elpa-let-alist
 elpa-linum-relative
+elpa-lua-mode
 elpa-magit
 elpa-magit-annex
 elpa-magit-popup
@@ -96,6 +100,7 @@ elpa-no-littering
 elpa-noflet
 elpa-nose
 elpa-openwith
+elpa-org
 elpa-org-bullets
 elpa-paredit
 elpa-paredit-everywhere
@@ -130,6 +135,7 @@ elpa-smeargle
 elpa-smex
 elpa-sml-mode
 elpa-solarized-theme
+elpa-swiper
 elpa-tablist
 elpa-undo-tree
 elpa-use-package

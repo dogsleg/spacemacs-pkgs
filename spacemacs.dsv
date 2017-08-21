@@ -76,7 +76,7 @@ company-statistics|todo|+completion/auto-completion
 company-tern|todo|+lang/javascript, +frameworks/react
 company-web|todo|+lang/html
 company-ycmd|todo|+tools/ycmd
-counsel|todo|+completion/ivy
+counsel|**DONE**|+completion/ivy
 counsel-dash|todo|+tools/dash
 counsel-projectile|todo|+completion/ivy
 csharp-mode|todo|+lang/csharp
@@ -278,8 +278,8 @@ inkpot-theme|todo|+themes/themes-megapack
 insert-shebang|todo|+lang/shell-scripts
 intero|todo|+lang/haskell
 ir-black-theme|todo|+themes/themes-megapack
-ivy|todo|+spacemacs/spacemacs-layouts, +completion/ivy
-ivy-hydra|todo|+completion/ivy
+ivy|**DONE**|+spacemacs/spacemacs-layouts, +completion/ivy
+ivy-hydra|**DONE**|+completion/ivy
 ivy-spacemacs-help|todo|+completion/ivy
 jabber|**DONE**|+chat/jabber
 jazz-theme|todo|+themes/themes-megapack
@@ -300,7 +300,7 @@ linum-relative|**DONE**|+spacemacs/spacemacs-evil
 live-py-mode|todo|+lang/python
 livid-mode|todo|+lang/javascript
 lorem-ipsum|todo|+spacemacs/spacemacs-editing
-lua-mode|todo|+lang/lua
+lua-mode|**DONE**|+lang/lua
 lush-theme|todo|+themes/themes-megapack
 macrostep|todo|+lang/emacs-lisp
 madhat2r-theme|todo|+themes/themes-megapack
@@ -345,6 +345,7 @@ oldlace-theme|todo|+themes/themes-megapack
 omnisharp|todo|+lang/csharp
 omtose-phellack-theme|todo|+themes/themes-megapack
 open-junk-file|todo|+spacemacs/spacemacs-ui
+org|**DONE**|+intl/chinese, +tools/shell, +emacs/org, +lang/clojure, +lang/scala, +lang/python
 org-download|todo|+emacs/org
 org-pomodoro|todo|+emacs/org
 org-present|todo|+emacs/org
@@ -461,7 +462,7 @@ sudoku|todo|+fun/games
 sunny-day-theme|todo|+themes/themes-megapack
 sunshine|todo|+tools/geolocation
 swift-mode|todo|+lang/swift
-swiper|todo|+completion/ivy
+swiper|**DONE**|+completion/ivy
 tagedit|todo|+lang/html
 tango-2-theme|todo|+themes/themes-megapack
 tango-plus-theme|todo|+themes/themes-megapack
