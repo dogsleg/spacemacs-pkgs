@@ -2,10 +2,12 @@
 
 This script is written to help with packaging Emacs packages used in Spacemacs for Debian. It scans Spacemacs source code and outputs DSV list of the following form:
 
-```[[!table  data="""
+```
+[[!table  data="""
 Package|Packaged by pkg-emacsen-addons?|Layers
 zonokai-theme|todo|+themes/themes-megapack
-"""]]```
+"""]]
+```
 
 Homepage: https://pkg-emacsen.alioth.debian.org/spacemacs/
 
