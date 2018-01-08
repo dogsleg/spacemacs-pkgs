@@ -46,7 +46,7 @@ cider|todo|+lang/clojure
 cider-eval-sexp-fu|todo|+lang/clojure
 clean-aindent-mode|todo|+spacemacs/spacemacs-editing
 clj-refactor|todo|+lang/clojure
-clojure-mode|todo|+lang/clojure
+clojure-mode|**DONE**|+lang/clojure
 clojure-snippets|todo|+lang/clojure
 clues-theme|todo|+themes/themes-megapack
 cmm-mode|todo|+lang/haskell
@@ -228,7 +228,7 @@ haskell-mode|**DONE**|+lang/haskell
 haskell-snippets|todo|+lang/haskell
 hc-zenburn-theme|todo|+themes/themes-megapack
 helm|**DONE**|+completion/helm, +tools/shell, +spacemacs/spacemacs-layouts, +lang/common-lisp, +os/osx
-helm-ag|todo|+completion/helm
+helm-ag|**DONE**|+completion/helm
 helm-c-yasnippet|todo|+completion/auto-completion
 helm-company|todo|+completion/auto-completion
 helm-cscope|todo|+tags/cscope, +lang/python
