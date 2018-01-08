@@ -18,6 +18,8 @@ elpa-browse-kill-ring
 elpa-bug-hunter
 elpa-buttercup
 elpa-circe
+elpa-clojure-mode
+elpa-clojure-mode-extra-font-locking
 elpa-company
 elpa-concurrent
 elpa-counsel
@@ -61,9 +63,11 @@ elpa-eyebrowse
 elpa-f
 elpa-faceup
 elpa-fill-column-indicator
+elpa-find-file-in-project
 elpa-flx
 elpa-flx-ido
 elpa-flycheck
+elpa-flycheck-package
 elpa-fountain-mode
 elpa-fsm
 elpa-geiser
@@ -80,6 +84,7 @@ elpa-gitignore-mode
 elpa-golden-ratio
 elpa-goto-chg
 elpa-helm
+elpa-helm-ag
 elpa-helm-core
 elpa-helm-projectile
 elpa-helm-virtualenvwrapper
@@ -156,6 +161,7 @@ elpa-rainbow-mode
 elpa-recursive-narrow
 elpa-redtick
 elpa-restart-emacs
+elpa-rich-minority
 elpa-rust-mode
 elpa-s
 elpa-seq
