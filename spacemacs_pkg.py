@@ -93,10 +93,9 @@ def check_built_in(string):
     Output: boolean
     """
     if ':location built-in' in string:
-        built_in = True
+        return True
     else:
-        built_in = False
-    return built_in
+        return False
 
 
 def get_layer(path):
@@ -193,7 +192,7 @@ def clean_pkg_emacsen_lst(lst):
     doc = re.compile(".*-doc")
     for i in lst:
         if i == 'dh-elpa' or i == 'dh-make-elpa' or doc.match(i):
-            pass
+            continue
         elif not elpa.match(i):
             clear_lst.append(i)
         else:
