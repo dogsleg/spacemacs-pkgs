@@ -23,7 +23,7 @@ auctex|todo|+lang/latex
 auctex-latexmk|todo|+lang/latex
 auto-compile|todo|+lang/emacs-lisp
 auto-complete|todo|+completion/auto-completion
-auto-dictionary|todo|+checkers/spell-checking
+auto-dictionary|**DONE**|+checkers/spell-checking
 auto-highlight-symbol|todo|+completion/helm, +completion/ivy, +spacemacs/spacemacs-editing-visual
 auto-yasnippet|todo|+completion/auto-completion
 avy|**DONE**|+spacemacs/spacemacs-editing
@@ -39,10 +39,9 @@ cargo|todo|+lang/rust
 centered-buffer-mode|todo|+distributions/spacemacs-base
 centered-cursor|todo|+spacemacs/spacemacs-ui
 cherry-blossom-theme|todo|+themes/themes-megapack
-chinese-pyim|todo|+intl/chinese
 chinese-wbim|todo|+intl/chinese
 chruby|todo|+lang/ruby
-cider|todo|+lang/clojure
+cider|**DONE**|+lang/clojure
 cider-eval-sexp-fu|todo|+lang/clojure
 clean-aindent-mode|todo|+spacemacs/spacemacs-editing
 clj-refactor|todo|+lang/clojure
@@ -81,7 +80,7 @@ counsel-dash|todo|+tools/dash
 counsel-projectile|todo|+completion/ivy
 csharp-mode|todo|+lang/csharp
 css-mode|todo|+lang/html
-csv-mode|todo|+lang/csv
+csv-mode|**DONE**|+lang/csv
 cyberpunk-theme|todo|+themes/themes-megapack
 cython-mode|todo|+lang/python
 d-mode|todo|+lang/d
@@ -99,7 +98,7 @@ django-theme|todo|+themes/themes-megapack
 dos|todo|+lang/windows-scripts
 dracula-theme|todo|+themes/themes-megapack
 drupal-mode|todo|+lang/php
-dumb-jump|todo|+spacemacs/spacemacs-misc
+dumb-jump|**DONE**|+spacemacs/spacemacs-misc
 eclim|todo|+lang/java
 ein|todo|+lang/ipython-notebook
 elfeed-goodies|todo|+web-services/elfeed
@@ -130,7 +129,6 @@ eshell-z|todo|+tools/shell
 espresso-theme|todo|+themes/themes-megapack
 ess|todo|+lang/ess
 ess-R-data-view|todo|+lang/ess
-ess-R-object-popup|todo|+lang/ess
 ess-smart-equals|todo|+lang/ess
 eval-sexp-fu|todo|+spacemacs/spacemacs-editing
 evil|**DONE**|+completion/ivy, +lang/emacs-lisp, +distributions/spacemacs-bootstrap
@@ -156,6 +154,7 @@ evil-unimpaired|todo|+source-control/version-control, +spacemacs/spacemacs-evil
 evil-visual-mark-mode|todo|+spacemacs/spacemacs-evil
 evil-visualstar|todo|+distributions/spacemacs-base
 exec-path-from-shell|todo|+os/osx, +distributions/spacemacs-base
+exotica-theme|todo|+themes/themes-megapack
 expand-region|**DONE**|+spacemacs/spacemacs-editing
 fancy-battery|todo|+spacemacs/spacemacs-ui-visual
 farmhouse-theme|todo|+themes/themes-megapack
@@ -164,7 +163,6 @@ fcitx|todo|+intl/chinese
 feature-mode|todo|+frameworks/ruby-on-rails
 fill-column-indicator|**DONE**|+source-control/git, +spacemacs/spacemacs-ui-visual
 find-by-pinyin-dired|todo|+intl/chinese
-firebelly-theme|todo|+themes/themes-megapack
 fish-mode|todo|+lang/shell-scripts
 flatland-theme|todo|+themes/themes-megapack
 flatui-theme|todo|+themes/themes-megapack
@@ -216,7 +214,7 @@ gnuplot|todo|+emacs/org
 gnus|todo|+email/gnus
 go-eldoc|todo|+lang/go
 go-guru|todo|+lang/go
-go-mode|todo|+lang/go
+go-mode|**DONE**|+lang/go
 go-rename|todo|+lang/go
 golden-ratio|**DONE**|+tools/tmux, +tools/restclient, +spacemacs/spacemacs-ui-visual, +lang/idris, +lang/ess
 gotham-theme|todo|+themes/themes-megapack
@@ -248,7 +246,7 @@ helm-pydoc|todo|+lang/python
 helm-rcirc|todo|+chat/rcirc
 helm-spacemacs-faq|todo|+completion/helm
 helm-spacemacs-help|todo|+completion/helm
-helm-spotify|todo|+web-services/spotify
+helm-spotify-plus|todo|+web-services/spotify
 helm-swoop|todo|+completion/helm
 helm-themes|todo|+completion/helm
 help-fns+|todo|+distributions/spacemacs-base
@@ -309,7 +307,7 @@ magit-gh-pulls|todo|+source-control/github
 magit-gitflow|todo|+source-control/git
 majapahit-theme|todo|+themes/themes-megapack
 markdown-mode|**DONE**|+lang/markdown
-markdown-toc|todo|+lang/markdown
+markdown-toc|**DONE**|+lang/markdown
 material-theme|todo|+themes/themes-megapack
 matlab-mode|todo|+lang/extra-langs
 merlin|todo|+lang/ocaml
@@ -327,7 +325,6 @@ mustang-theme|todo|+themes/themes-megapack
 naquadah-theme|todo|+themes/themes-megapack
 nasm-mode|todo|+lang/asm
 neotree|todo|+spacemacs/spacemacs-ui-visual
-niflheim-theme|todo|+themes/themes-megapack
 nix-mode|todo|+os/nixos
 nixos-options|todo|+os/nixos
 noctilux-theme|todo|+themes/themes-megapack
@@ -347,6 +344,7 @@ omtose-phellack-theme|todo|+themes/themes-megapack
 open-junk-file|todo|+spacemacs/spacemacs-ui
 org|**DONE**|+emacs/org, +tools/shell, +intl/chinese, +lang/python, +lang/clojure, +lang/scala
 org-download|todo|+emacs/org
+org-mime|todo|+emacs/org
 org-pomodoro|todo|+emacs/org
 org-present|todo|+emacs/org
 org-projectile|todo|+emacs/org
@@ -364,9 +362,8 @@ p4|todo|+source-control/perforce
 pacmacs|todo|+fun/games
 pangu-spacing|todo|+intl/chinese
 paradox|todo|+spacemacs/spacemacs-ui
-pastels-on-dark-theme|todo|+themes/themes-megapack
 pbcopy|todo|+os/osx
-pcre2el|todo|+distributions/spacemacs-base
+pcre2el|**DONE**|+distributions/spacemacs-base
 pdf-tools|**DONE**|+tools/pdf-tools
 persp-mode|todo|+completion/helm, +completion/ivy, +emacs/org, +spacemacs/spacemacs-layouts, +chat/erc, +chat/rcirc
 phoenix-dark-mono-theme|todo|+themes/themes-megapack
@@ -376,7 +373,7 @@ php-extras|todo|+lang/php
 php-mode|todo|+lang/php
 phpcbf|todo|+lang/php
 phpunit|todo|+lang/php
-pip-requirements|todo|+lang/python
+pip-requirements|**DONE**|+lang/python
 planet-theme|todo|+themes/themes-megapack
 pony-mode|todo|+frameworks/django
 popup|**DONE**|+spacemacs/spacemacs-ui-visual
@@ -395,6 +392,7 @@ purescript-mode|todo|+lang/purescript
 purple-haze-theme|todo|+themes/themes-megapack
 py-isort|**DONE**|+lang/python
 pyenv-mode|todo|+lang/python
+pyim|todo|+intl/chinese
 pylookup|todo|+lang/python
 pytest|todo|+lang/python
 pyvenv|**DONE**|+lang/python
@@ -412,6 +410,7 @@ rbenv|todo|+lang/ruby
 rcirc|todo|+chat/rcirc
 rcirc-color|todo|+chat/rcirc
 rcirc-notify|todo|+chat/rcirc
+rebecca-theme|todo|+themes/themes-megapack
 request|todo|+spacemacs/spacemacs-misc
 restart-emacs|**DONE**|+spacemacs/spacemacs-ui
 restclient|todo|+tools/restclient
@@ -477,7 +476,6 @@ tildify|todo|+emacs/typography
 tmux|todo|+tools/tmux
 toml-mode|todo|+lang/rust
 toxi-theme|todo|+themes/themes-megapack
-tronesque-theme|todo|+themes/themes-megapack
 tuareg|todo|+lang/ocaml
 twilight-anti-bright-theme|todo|+themes/themes-megapack
 twilight-bright-theme|todo|+themes/themes-megapack
@@ -503,7 +501,7 @@ web-beautify|todo|+frameworks/react, +lang/javascript
 web-mode|todo|+frameworks/react, +lang/html, +lang/typescript
 wgrep|todo|+completion/ivy
 which-key|**DONE**|+frameworks/ruby-on-rails, +tools/speed-reading, +lang/latex, +distributions/spacemacs-bootstrap
-wolfram-mode|todo|+lang/extra-langs
+white-sand-theme|todo|+themes/themes-megapack
 x86-lookup|todo|+lang/asm
 xcscope|todo|+tags/cscope, +lang/python
 xkcd|todo|+fun/xkcd
@@ -514,5 +512,4 @@ ycmd|todo|+tools/ycmd
 youdao-dictionary|todo|+intl/chinese
 zen-and-art-theme|todo|+themes/themes-megapack
 zenburn-theme|**DONE**|+themes/themes-megapack
-zonokai-theme|todo|+themes/themes-megapack
 """]]
