@@ -9,7 +9,7 @@ zonokai-theme|todo|+themes/themes-megapack
 """]]
 ```
 
-Homepage: https://pkg-emacsen.alioth.debian.org/spacemacs/
+Homepage: https://pkg-emacsen.alioth.debian.org/spacemacs/ (decommissioned)
 
 For motivation, see: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=828154
 
