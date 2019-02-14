@@ -370,7 +370,7 @@ phoenix-dark-mono-theme|todo|+themes/themes-megapack
 phoenix-dark-pink-theme|todo|+themes/themes-megapack
 php-auto-yasnippets|todo|+lang/php
 php-extras|todo|+lang/php
-php-mode|todo|+lang/php
+php-mode|**DONE**|+lang/php
 phpcbf|todo|+lang/php
 phpunit|todo|+lang/php
 pip-requirements|**DONE**|+lang/python
@@ -498,7 +498,7 @@ vmd-mode|todo|+lang/markdown
 volatile-highlights|todo|+spacemacs/spacemacs-editing-visual
 wakatime-mode|todo|+web-services/wakatime
 web-beautify|todo|+frameworks/react, +lang/javascript
-web-mode|todo|+frameworks/react, +lang/html, +lang/typescript
+web-mode|**DONE**|+frameworks/react, +lang/html, +lang/typescript
 wgrep|todo|+completion/ivy
 which-key|**DONE**|+frameworks/ruby-on-rails, +tools/speed-reading, +lang/latex, +distributions/spacemacs-bootstrap
 white-sand-theme|todo|+themes/themes-megapack
