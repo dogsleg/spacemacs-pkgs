@@ -24,7 +24,7 @@ auctex-latexmk|todo|+lang/latex
 auto-compile|todo|+lang/emacs-lisp
 auto-complete|todo|+completion/auto-completion
 auto-dictionary|**DONE**|+checkers/spell-checking
-auto-highlight-symbol|todo|+completion/helm, +completion/ivy, +spacemacs/spacemacs-editing-visual
+auto-highlight-symbol|todo|+completion/ivy, +completion/helm, +spacemacs/spacemacs-editing-visual
 auto-yasnippet|todo|+completion/auto-completion
 avy|**DONE**|+spacemacs/spacemacs-editing
 badwolf-theme|todo|+themes/themes-megapack
@@ -55,14 +55,14 @@ color-theme-sanityinc-solarized|todo|+themes/themes-megapack
 color-theme-sanityinc-tomorrow|todo|+themes/themes-megapack
 column-enforce-mode|todo|+spacemacs/spacemacs-editing-visual
 common-lisp-snippets|todo|+lang/common-lisp
-company|**DONE**|+completion/auto-completion, +emacs/org, +frameworks/react, +tools/shell, +tools/puppet, +tools/ansible, +tools/finance, +tools/restclient, +chat/erc, +chat/rcirc, +lang/python, +lang/csharp, +lang/agda, +lang/javascript, +lang/rust, +lang/clojure, +lang/latex, +lang/shell-scripts, +lang/elixir, +lang/haskell, +lang/ruby, +lang/html, +lang/ocaml, +lang/java, +lang/erlang, +lang/markdown, +lang/scheme, +lang/shaders, +lang/d, +lang/go, +lang/lua, +lang/php, +lang/typescript, +lang/racket, +lang/emacs-lisp, +lang/elm, +os/nixos
+company|**DONE**|+os/nixos, +chat/rcirc, +chat/erc, +completion/auto-completion, +lang/lua, +lang/elm, +lang/shell-scripts, +lang/erlang, +lang/agda, +lang/php, +lang/d, +lang/java, +lang/ocaml, +lang/ruby, +lang/javascript, +lang/csharp, +lang/typescript, +lang/clojure, +lang/shaders, +lang/racket, +lang/haskell, +lang/go, +lang/rust, +lang/scheme, +lang/emacs-lisp, +lang/html, +lang/elixir, +lang/latex, +lang/python, +lang/markdown, +frameworks/react, +emacs/org, +tools/puppet, +tools/ansible, +tools/restclient, +tools/shell, +tools/finance
 company-anaconda|todo|+lang/python
 company-ansible|todo|+tools/ansible
 company-auctex|todo|+lang/latex
 company-cabal|todo|+lang/haskell
 company-dcd|todo|+lang/d
 company-emacs-eclim|todo|+lang/java
-company-emoji|todo|+fun/emoji, +emacs/org, +chat/erc, +chat/rcirc, +lang/markdown
+company-emoji|todo|+chat/rcirc, +chat/erc, +lang/markdown, +fun/emoji, +emacs/org
 company-ghc|todo|+lang/haskell
 company-ghci|todo|+lang/haskell
 company-glsl|todo|+lang/shaders
@@ -72,7 +72,7 @@ company-quickhelp|todo|+completion/auto-completion, +lang/racket
 company-restclient|todo|+tools/restclient
 company-shell|todo|+lang/shell-scripts
 company-statistics|todo|+completion/auto-completion
-company-tern|todo|+frameworks/react, +lang/javascript
+company-tern|todo|+lang/javascript, +frameworks/react
 company-web|todo|+lang/html
 company-ycmd|todo|+tools/ycmd
 counsel|**DONE**|+completion/ivy
@@ -91,7 +91,7 @@ darkmine-theme|todo|+themes/themes-megapack
 darkokai-theme|todo|+themes/themes-megapack
 darktooth-theme|todo|+themes/themes-megapack
 desktop|todo|+spacemacs/spacemacs-ui
-diff-hl|**DONE**|+vim/vinegar, +source-control/version-control
+diff-hl|**DONE**|+source-control/version-control, +vim/vinegar
 diff-mode|todo|+source-control/version-control
 diminish|**DONE**|+distributions/spacemacs-bootstrap
 django-theme|todo|+themes/themes-megapack
@@ -106,9 +106,9 @@ elfeed-org|todo|+web-services/elfeed
 elfeed-web|**DONE**|+web-services/elfeed
 elisp-slime-nav|**DONE**|+lang/emacs-lisp
 elixir-mode|todo|+lang/elixir
-elm-mode|todo|+lang/elm
-emmet-mode|todo|+frameworks/react, +lang/html
-emoji-cheat-sheet-plus|todo|+fun/emoji, +emacs/org, +chat/erc, +chat/rcirc, +lang/markdown
+elm-mode|**DONE**|+lang/elm
+emmet-mode|todo|+lang/html, +frameworks/react
+emoji-cheat-sheet-plus|todo|+chat/rcirc, +chat/erc, +lang/markdown, +fun/emoji, +emacs/org
 engine-mode|**DONE**|+web-services/search-engine
 enh-ruby-mode|todo|+lang/ruby
 ensime|todo|+lang/scala
@@ -141,14 +141,14 @@ evil-iedit-state|todo|+spacemacs/spacemacs-evil
 evil-indent-plus|todo|+spacemacs/spacemacs-evil
 evil-lisp-state|todo|+spacemacs/spacemacs-evil
 evil-magit|todo|+source-control/git
-evil-matchit|todo|+frameworks/react, +spacemacs/spacemacs-evil, +lang/python, +lang/csharp, +lang/javascript, +lang/latex, +lang/ruby, +lang/html
+evil-matchit|todo|+lang/ruby, +lang/javascript, +lang/csharp, +lang/html, +lang/latex, +lang/python, +frameworks/react, +spacemacs/spacemacs-evil
 evil-mc|todo|+spacemacs/spacemacs-evil
-evil-nerd-commenter|todo|+vim/evil-commentary, +spacemacs/spacemacs-evil
+evil-nerd-commenter|todo|+spacemacs/spacemacs-evil, +vim/evil-commentary
 evil-numbers|todo|+spacemacs/spacemacs-evil
 evil-org|todo|+emacs/org
 evil-search-highlight-persist|todo|+spacemacs/spacemacs-evil
 evil-snipe|todo|+vim/evil-snipe
-evil-surround|todo|+emacs/org, +spacemacs/spacemacs-evil
+evil-surround|todo|+spacemacs/spacemacs-evil, +emacs/org
 evil-tutor|todo|+spacemacs/spacemacs-evil
 evil-unimpaired|todo|+source-control/version-control, +spacemacs/spacemacs-evil
 evil-visual-mark-mode|todo|+spacemacs/spacemacs-evil
@@ -169,7 +169,7 @@ flatui-theme|todo|+themes/themes-megapack
 floobits|todo|+pair-programming/floobits
 flx|**DONE**|+completion/ivy
 flx-ido|**DONE**|+spacemacs/spacemacs-ui
-flycheck|**DONE**|+frameworks/react, +tools/puppet, +checkers/syntax-checking, +lang/swift, +lang/python, +lang/javascript, +lang/rust, +lang/latex, +lang/shell-scripts, +lang/elixir, +lang/haskell, +lang/ruby, +lang/nim, +lang/html, +lang/erlang, +lang/d, +lang/go, +lang/lua, +lang/php, +lang/purescript, +lang/typescript, +lang/emacs-lisp, +lang/scala, +lang/elm
+flycheck|**DONE**|+lang/lua, +lang/elm, +lang/swift, +lang/shell-scripts, +lang/erlang, +lang/php, +lang/d, +lang/purescript, +lang/ruby, +lang/javascript, +lang/typescript, +lang/haskell, +lang/go, +lang/rust, +lang/emacs-lisp, +lang/html, +lang/elixir, +lang/scala, +lang/latex, +lang/python, +lang/nim, +frameworks/react, +checkers/syntax-checking, +tools/puppet
 flycheck-credo|todo|+lang/elixir
 flycheck-dmd-dub|todo|+lang/d
 flycheck-elm|todo|+lang/elm
@@ -182,7 +182,7 @@ flycheck-pos-tip|todo|+checkers/syntax-checking
 flycheck-rust|todo|+lang/rust
 flycheck-ycmd|todo|+tools/ycmd
 flymd|todo|+tools/chrome
-flyspell|todo|+chat/rcirc, +checkers/spell-checking, +lang/latex
+flyspell|todo|+chat/rcirc, +lang/latex, +checkers/spell-checking
 flyspell-correct|todo|+checkers/spell-checking
 flyspell-correct-helm|todo|+checkers/spell-checking
 flyspell-correct-ivy|todo|+checkers/spell-checking
@@ -191,7 +191,7 @@ fuzzy|todo|+completion/auto-completion
 gandalf-theme|todo|+themes/themes-megapack
 geeknote|todo|+web-services/evernote
 geiser|**DONE**|+lang/scheme
-ggtags|todo|+lang/asm, +lang/windows-scripts, +lang/python, +lang/csharp, +lang/common-lisp, +lang/javascript, +lang/rust, +lang/clojure, +lang/latex, +lang/shell-scripts, +lang/elixir, +lang/haskell, +lang/ruby, +lang/ocaml, +lang/java, +lang/erlang, +lang/scheme, +lang/d, +lang/go, +lang/lua, +lang/php, +lang/racket, +lang/emacs-lisp, +lang/vimscript, +lang/octave, +lang/scala, +lang/fsharp
+ggtags|todo|+lang/lua, +lang/shell-scripts, +lang/fsharp, +lang/erlang, +lang/php, +lang/d, +lang/common-lisp, +lang/java, +lang/ocaml, +lang/vimscript, +lang/ruby, +lang/javascript, +lang/csharp, +lang/clojure, +lang/octave, +lang/racket, +lang/windows-scripts, +lang/haskell, +lang/go, +lang/rust, +lang/scheme, +lang/emacs-lisp, +lang/elixir, +lang/scala, +lang/latex, +lang/python, +lang/asm
 gh-md|todo|+lang/markdown
 ghc|todo|+lang/haskell
 gist|todo|+source-control/github
@@ -216,7 +216,7 @@ go-eldoc|todo|+lang/go
 go-guru|todo|+lang/go
 go-mode|**DONE**|+lang/go
 go-rename|todo|+lang/go
-golden-ratio|**DONE**|+tools/tmux, +tools/restclient, +spacemacs/spacemacs-ui-visual, +lang/idris, +lang/ess
+golden-ratio|**DONE**|+lang/ess, +lang/idris, +spacemacs/spacemacs-ui-visual, +tools/restclient, +tools/tmux
 gotham-theme|todo|+themes/themes-megapack
 grandshell-theme|todo|+themes/themes-megapack
 gruber-darker-theme|todo|+themes/themes-megapack
@@ -225,20 +225,20 @@ haml-mode|todo|+lang/html
 haskell-mode|**DONE**|+lang/haskell
 haskell-snippets|todo|+lang/haskell
 hc-zenburn-theme|todo|+themes/themes-megapack
-helm|**DONE**|+completion/helm, +tools/shell, +spacemacs/spacemacs-layouts, +lang/common-lisp, +os/osx
+helm|**DONE**|+os/osx, +completion/helm, +lang/common-lisp, +spacemacs/spacemacs-layouts, +tools/shell
 helm-ag|**DONE**|+completion/helm
 helm-c-yasnippet|todo|+completion/auto-completion
 helm-company|todo|+completion/auto-completion
-helm-cscope|todo|+tags/cscope, +lang/python
+helm-cscope|todo|+lang/python, +tags/cscope
 helm-css-scss|todo|+lang/html
 helm-dash|todo|+tools/dash
 helm-descbinds|todo|+completion/helm
 helm-flx|todo|+completion/helm
 helm-games|todo|+fun/games
 helm-gitignore|todo|+source-control/git
-helm-gtags|todo|+lang/asm, +lang/windows-scripts, +lang/python, +lang/csharp, +lang/common-lisp, +lang/javascript, +lang/rust, +lang/clojure, +lang/latex, +lang/shell-scripts, +lang/elixir, +lang/haskell, +lang/ruby, +lang/ocaml, +lang/java, +lang/erlang, +lang/scheme, +lang/d, +lang/go, +lang/lua, +lang/php, +lang/racket, +lang/emacs-lisp, +lang/vimscript, +lang/octave, +lang/scala, +lang/fsharp
+helm-gtags|todo|+lang/lua, +lang/shell-scripts, +lang/fsharp, +lang/erlang, +lang/php, +lang/d, +lang/common-lisp, +lang/java, +lang/ocaml, +lang/vimscript, +lang/ruby, +lang/javascript, +lang/csharp, +lang/clojure, +lang/octave, +lang/racket, +lang/windows-scripts, +lang/haskell, +lang/go, +lang/rust, +lang/scheme, +lang/emacs-lisp, +lang/elixir, +lang/scala, +lang/latex, +lang/python, +lang/asm
 helm-hoogle|todo|+lang/haskell
-helm-make|todo|+completion/helm, +completion/ivy
+helm-make|todo|+completion/ivy, +completion/helm
 helm-mode-manager|todo|+completion/helm
 helm-nixos-options|todo|+os/nixos
 helm-projectile|**DONE**|+completion/helm
@@ -283,7 +283,7 @@ jabber|**DONE**|+chat/jabber
 jazz-theme|todo|+themes/themes-megapack
 jbeans-theme|todo|+themes/themes-megapack
 jinja2-mode|**DONE**|+tools/ansible
-js-doc|todo|+frameworks/react, +lang/javascript
+js-doc|todo|+lang/javascript, +frameworks/react
 js2-mode|todo|+lang/javascript
 js2-refactor|todo|+lang/javascript
 json-mode|todo|+lang/javascript
@@ -302,7 +302,7 @@ lua-mode|**DONE**|+lang/lua
 lush-theme|todo|+themes/themes-megapack
 macrostep|todo|+lang/emacs-lisp
 madhat2r-theme|todo|+themes/themes-megapack
-magit|**DONE**|+vim/evil-snipe, +tools/shell, +source-control/git
+magit|**DONE**|+source-control/git, +vim/evil-snipe, +tools/shell
 magit-gh-pulls|todo|+source-control/github
 magit-gitflow|todo|+source-control/git
 majapahit-theme|todo|+themes/themes-megapack
@@ -324,7 +324,7 @@ multi-term|todo|+tools/shell
 mustang-theme|todo|+themes/themes-megapack
 naquadah-theme|todo|+themes/themes-megapack
 nasm-mode|todo|+lang/asm
-neotree|todo|+spacemacs/spacemacs-ui-visual
+neotree|**DONE**|+spacemacs/spacemacs-ui-visual
 nix-mode|todo|+os/nixos
 nixos-options|todo|+os/nixos
 noctilux-theme|todo|+themes/themes-megapack
@@ -342,7 +342,7 @@ oldlace-theme|todo|+themes/themes-megapack
 omnisharp|todo|+lang/csharp
 omtose-phellack-theme|todo|+themes/themes-megapack
 open-junk-file|todo|+spacemacs/spacemacs-ui
-org|**DONE**|+emacs/org, +tools/shell, +intl/chinese, +lang/python, +lang/clojure, +lang/scala
+org|**DONE**|+lang/clojure, +lang/scala, +lang/python, +intl/chinese, +emacs/org, +tools/shell
 org-download|todo|+emacs/org
 org-mime|todo|+emacs/org
 org-pomodoro|todo|+emacs/org
@@ -365,7 +365,7 @@ paradox|todo|+spacemacs/spacemacs-ui
 pbcopy|todo|+os/osx
 pcre2el|**DONE**|+distributions/spacemacs-base
 pdf-tools|**DONE**|+tools/pdf-tools
-persp-mode|todo|+completion/helm, +completion/ivy, +emacs/org, +spacemacs/spacemacs-layouts, +chat/erc, +chat/rcirc
+persp-mode|todo|+chat/rcirc, +chat/erc, +completion/ivy, +completion/helm, +spacemacs/spacemacs-layouts, +emacs/org
 phoenix-dark-mono-theme|todo|+themes/themes-megapack
 phoenix-dark-pink-theme|todo|+themes/themes-megapack
 php-auto-yasnippets|todo|+lang/php
@@ -377,17 +377,17 @@ pip-requirements|**DONE**|+lang/python
 planet-theme|todo|+themes/themes-megapack
 pony-mode|todo|+frameworks/django
 popup|**DONE**|+spacemacs/spacemacs-ui-visual
-popwin|todo|+completion/helm, +tools/geolocation, +spacemacs/spacemacs-ui-visual, +checkers/syntax-checking, +lang/clojure, +lang/elixir, +lang/ruby, +lang/elm
+popwin|todo|+completion/helm, +lang/elm, +lang/ruby, +lang/clojure, +lang/elixir, +spacemacs/spacemacs-ui-visual, +checkers/syntax-checking, +tools/geolocation
 powerline|**DONE**|+vim/vim-powerline
 powershell|todo|+lang/windows-scripts
 prodigy|todo|+tools/prodigy
 professional-theme|todo|+themes/themes-megapack
-projectile|**DONE**|+completion/helm, +completion/ivy, +tools/shell, +distributions/spacemacs-base
+projectile|**DONE**|+completion/ivy, +completion/helm, +distributions/spacemacs-base, +tools/shell
 projectile-rails|todo|+frameworks/ruby-on-rails
 psc-ide|todo|+lang/purescript
 psci|todo|+lang/purescript
 pug-mode|todo|+lang/html
-puppet-mode|todo|+tools/puppet
+puppet-mode|**DONE**|+tools/puppet
 purescript-mode|todo|+lang/purescript
 purple-haze-theme|todo|+themes/themes-megapack
 py-isort|**DONE**|+lang/python
@@ -398,7 +398,7 @@ pytest|todo|+lang/python
 pyvenv|**DONE**|+lang/python
 qml-mode|**DONE**|+lang/extra-langs
 racer|todo|+lang/rust
-racket-mode|todo|+lang/racket
+racket-mode|**DONE**|+lang/racket
 railscasts-theme|todo|+themes/themes-megapack
 rainbow-delimiters|**DONE**|+spacemacs/spacemacs-editing-visual
 rainbow-identifiers|**DONE**|+themes/colors
@@ -435,7 +435,7 @@ shell-pop|todo|+tools/shell
 skewer-mode|todo|+lang/javascript
 slim-mode|todo|+lang/html
 slime|todo|+lang/common-lisp
-smartparens|todo|+completion/auto-completion, +frameworks/react, +spacemacs/spacemacs-editing, +lang/python, +lang/clojure, +lang/latex, +lang/elixir, +lang/ruby, +lang/html, +lang/ocaml, +lang/markdown, +lang/emacs-lisp, +lang/sml, +lang/elm
+smartparens|todo|+completion/auto-completion, +lang/elm, +lang/ocaml, +lang/ruby, +lang/clojure, +lang/emacs-lisp, +lang/html, +lang/elixir, +lang/sml, +lang/latex, +lang/python, +lang/markdown, +frameworks/react, +spacemacs/spacemacs-editing
 smeargle|**DONE**|+source-control/git
 smex|**DONE**|+completion/ivy, +emacs/smex
 sml-mode|**DONE**|+lang/sml
@@ -453,7 +453,7 @@ spray|todo|+tools/speed-reading
 sql sql-indent|todo|+lang/sql
 srefactor|todo|+emacs/semantic
 stan-mode|todo|+lang/extra-langs
-stickyfunc-enhance|todo|+emacs/semantic, +lang/python
+stickyfunc-enhance|todo|+lang/python, +emacs/semantic
 subatomic-theme|todo|+themes/themes-megapack
 subatomic256-theme|todo|+themes/themes-megapack
 sublime-themes|todo|+themes/themes-megapack
@@ -467,7 +467,7 @@ tango-2-theme|todo|+themes/themes-megapack
 tango-plus-theme|todo|+themes/themes-megapack
 tangotango-theme|todo|+themes/themes-megapack
 tao-theme|todo|+themes/themes-megapack
-tern|todo|+frameworks/react, +lang/javascript
+tern|todo|+lang/javascript, +frameworks/react
 terraform-mode|todo|+tools/terraform
 theme-changer|todo|+tools/geolocation
 thrift|todo|+lang/extra-langs
@@ -483,31 +483,31 @@ twilight-theme|todo|+themes/themes-megapack
 twittering-mode|todo|+web-services/twitter
 typescript-mode|todo|+lang/typescript
 typit|todo|+fun/games
-typo|todo|+emacs/typography, +lang/latex
+typo|todo|+lang/latex, +emacs/typography
 ujelly-theme|todo|+themes/themes-megapack
 underwater-theme|todo|+themes/themes-megapack
 undo-tree|**DONE**|+spacemacs/spacemacs-editing
 use-package|**DONE**|+distributions/spacemacs-bootstrap
 utop|todo|+lang/ocaml
 uuidgen|todo|+spacemacs/spacemacs-editing
-vi-tilde-fringe|todo|+vim/vim-empty-lines, +tools/shell, +spacemacs/spacemacs-evil
+vi-tilde-fringe|todo|+spacemacs/spacemacs-evil, +vim/vim-empty-lines, +tools/shell
 vim-empty-lines-mode|todo|+vim/vim-empty-lines
 vim-powerline|todo|+vim/vim-powerline
 vimrc-mode|todo|+lang/vimscript
 vmd-mode|todo|+lang/markdown
 volatile-highlights|todo|+spacemacs/spacemacs-editing-visual
 wakatime-mode|todo|+web-services/wakatime
-web-beautify|todo|+frameworks/react, +lang/javascript
-web-mode|**DONE**|+frameworks/react, +lang/html, +lang/typescript
+web-beautify|todo|+lang/javascript, +frameworks/react
+web-mode|**DONE**|+lang/typescript, +lang/html, +frameworks/react
 wgrep|todo|+completion/ivy
-which-key|**DONE**|+frameworks/ruby-on-rails, +tools/speed-reading, +lang/latex, +distributions/spacemacs-bootstrap
+which-key|**DONE**|+lang/latex, +frameworks/ruby-on-rails, +distributions/spacemacs-bootstrap, +tools/speed-reading
 white-sand-theme|todo|+themes/themes-megapack
 x86-lookup|todo|+lang/asm
-xcscope|todo|+tags/cscope, +lang/python
+xcscope|todo|+lang/python, +tags/cscope
 xkcd|todo|+fun/xkcd
 xterm-color|todo|+tools/shell
 yapfify|todo|+lang/python
-yasnippet|**DONE**|+completion/auto-completion, +lang/latex, +lang/html
+yasnippet|**DONE**|+completion/auto-completion, +lang/html, +lang/latex
 ycmd|todo|+tools/ycmd
 youdao-dictionary|todo|+intl/chinese
 zen-and-art-theme|todo|+themes/themes-megapack
