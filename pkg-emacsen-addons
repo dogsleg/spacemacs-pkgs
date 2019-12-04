@@ -1,5 +1,6 @@
 cider-doc
 dh-elpa
+dh-elpa-helper
 dh-make-elpa
 elpa-ac-rtags
 elpa-ace-link
@@ -30,6 +31,7 @@ elpa-cider
 elpa-circe
 elpa-clojure-mode
 elpa-clojure-mode-extra-font-locking
+elpa-color-theme-modern
 elpa-company
 elpa-company-lsp
 elpa-company-rtags
@@ -65,6 +67,7 @@ elpa-elfeed
 elpa-elfeed-web
 elpa-elisp-refs
 elpa-elisp-slime-nav
+elpa-elm-mode
 elpa-elpy
 elpa-engine-mode
 elpa-epc
@@ -116,6 +119,7 @@ elpa-haskell-mode
 elpa-helm
 elpa-helm-ag
 elpa-helm-core
+elpa-helm-org
 elpa-helm-projectile
 elpa-helm-rtags
 elpa-helm-virtualenvwrapper
@@ -153,6 +157,7 @@ elpa-lsp-haskell
 elpa-lsp-mode
 elpa-lsp-ui
 elpa-lua-mode
+elpa-lv
 elpa-m-buffer
 elpa-magit
 elpa-magit-annex
@@ -171,6 +176,7 @@ elpa-move-text
 elpa-muse
 elpa-mutt-alias
 elpa-muttrc-mode
+elpa-neotree
 elpa-no-littering
 elpa-noflet
 elpa-nose
@@ -199,12 +205,14 @@ elpa-pointback
 elpa-popup
 elpa-powerline
 elpa-projectile
+elpa-puppet-mode
 elpa-py-autopep8
 elpa-py-isort
 elpa-python-environment
 elpa-pyvenv
 elpa-qml-mode
 elpa-queue
+elpa-racket-mode
 elpa-rainbow-delimiters
 elpa-rainbow-identifiers
 elpa-rainbow-mode
