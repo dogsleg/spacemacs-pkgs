@@ -125,7 +125,7 @@ erc-yt|todo|+chat/erc
 erlang|todo|+lang/erlang
 esh-help|**DONE**|+tools/shell
 eshell-prompt-extras|**DONE**|+tools/shell
-eshell-z|todo|+tools/shell
+eshell-z|**DONE**|+tools/shell
 espresso-theme|todo|+themes/themes-megapack
 ess|todo|+lang/ess
 ess-R-data-view|todo|+lang/ess
@@ -153,7 +153,7 @@ evil-tutor|todo|+spacemacs/spacemacs-evil
 evil-unimpaired|todo|+source-control/version-control, +spacemacs/spacemacs-evil
 evil-visual-mark-mode|todo|+spacemacs/spacemacs-evil
 evil-visualstar|todo|+distributions/spacemacs-base
-exec-path-from-shell|todo|+os/osx, +distributions/spacemacs-base
+exec-path-from-shell|**DONE**|+os/osx, +distributions/spacemacs-base
 exotica-theme|todo|+themes/themes-megapack
 expand-region|**DONE**|+spacemacs/spacemacs-editing
 fancy-battery|todo|+spacemacs/spacemacs-ui-visual
