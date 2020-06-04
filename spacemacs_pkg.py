@@ -102,12 +102,7 @@ def get_layer(path):
     Input:  string
     Output: string
     """
-    path_lst = path.split('/')
-    c = 0
-    while c < len(path_lst):
-        if '+' in path_lst[c]:
-            return "/".join(path_lst[c:-1])
-        c += 1
+    return '+' + path.split('+')[1]
 
 
 def parse_complex_pkgs_list(string, path):
