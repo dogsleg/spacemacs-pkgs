@@ -52,6 +52,7 @@ elpa-devscripts
 elpa-diff-hl
 elpa-diffview
 elpa-diminish
+elpa-dimmer
 elpa-dired-du
 elpa-dired-quick-sort
 elpa-dired-rsync
@@ -80,9 +81,11 @@ elpa-eshell-bookmark
 elpa-eshell-git-prompt
 elpa-eshell-prompt-extras
 elpa-eshell-up
+elpa-eshell-z
+elpa-esup
 elpa-esxml
 elpa-evil
-elpa-evil-paredit
+elpa-exec-path-from-shell
 elpa-expand-region
 elpa-eyebrowse
 elpa-f
@@ -162,6 +165,7 @@ elpa-m-buffer
 elpa-magit
 elpa-magit-annex
 elpa-magit-popup
+elpa-magit-todos
 elpa-magithub
 elpa-makey
 elpa-markdown-mode
@@ -238,6 +242,7 @@ elpa-spinner
 elpa-suggest
 elpa-super-save
 elpa-swiper
+elpa-sxiv
 elpa-system-packages
 elpa-systemd
 elpa-tabbar
@@ -258,6 +263,7 @@ elpa-visual-fill-column
 elpa-visual-regexp
 elpa-wc-mode
 elpa-web-mode
+elpa-websocket
 elpa-weechat
 elpa-which-key
 elpa-with-editor
@@ -267,6 +273,7 @@ elpa-writegood-mode
 elpa-ws-butler
 elpa-xcite
 elpa-xml-rpc
+elpa-xr
 elpa-yaml-mode
 elpa-yasnippet
 elpa-yasnippet-snippets
