@@ -92,10 +92,7 @@ def check_built_in(string):
     Input:  string
     Output: boolean
     """
-    if ':location built-in' in string:
-        return True
-    else:
-        return False
+    return ':location built-in' in string
 
 
 def get_layer(path):
