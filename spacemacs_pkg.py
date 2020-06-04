@@ -34,7 +34,7 @@ __version__ = '0.0.2'
 
 def count_parens(string):
     """
-    Return a spread between open and close parens in a given string.
+    Count a spread between open and close parens in a given string.
 
     Input:  string
     Output: integer
@@ -86,22 +86,10 @@ def get_pkg_declaration(strings):
 
 
 def check_built_in(string):
-    """
-    Return True if a package in a given string is built-in, False otherwise.
-
-    Input:  string
-    Output: boolean
-    """
     return ':location built-in' in string
 
 
 def get_layer(path):
-    """
-    Return layer name (e. g. '+emacs/org').
-
-    Input:  string
-    Output: string
-    """
     return '+' + path.split('+')[1]
 
 
