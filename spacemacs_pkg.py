@@ -55,7 +55,7 @@ def strip_comments(strings):
     Input:  list of strings
     Output: list of strings
     """
-    comment = re.compile("\s*;;.*")
+    comment = re.compile(r'\s*;;.*')
     result = []
     for i in strings:
         if not comment.match(i):
@@ -70,11 +70,11 @@ def get_pkg_declaration(strings):
     Input:  list of strings
     Output: list of strings
     """
-    pkgs_list = re.compile("\(setq [a-z\-]+-package.*")
+    pkgs_list = re.compile(r'\(setq [a-z-]+-package.*')
     pkg_declaration = []
     started = 0
     parens_balance = 0
-    for i in strip_comments(content):
+    for i in strings:
         if pkgs_list.match(i):
             started = 1
         if started:
@@ -131,7 +131,7 @@ def get_pkgs_list(strings, path):
     else:
         pkgs_list = []
         multiline = ''
-        alpha = re.compile("[a-z0-9\-]")
+        alpha = re.compile(r'[a-z0-9-]')
         for i in strings[2:-1]:
             if alpha.match(i[0]):
                 pkgs_list.append(parse_complex_pkgs_list(i, path))
