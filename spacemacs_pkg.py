@@ -5,7 +5,7 @@
 # This script is written to help with packaging Emacs packages used in
 # Spacemacs for Debian.
 #
-# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=828154
+# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=828154e
 ###############################################################################
 # Copyright (C) 2017 Lev Lamberov
 #
@@ -23,37 +23,23 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###############################################################################
 
-import argparse
 import glob
 import os
 import re
 import sys
+import tempfile
+import urllib.request
+import zipfile
 
-__version__ = '0.0.2'
-
-
-def count_parens(string):
-    """
-    Count a spread between open and close parens in a given string.
-
-    Input:  string
-    Output: integer
-    """
-    parens = 0
-    for c in string:
-        if c == '(':
-            parens += 1
-        elif c == ')':
-            parens -= 1
-    return parens
+__version__ = '0.1.0'
 
 
 def strip_comments(strings):
     """
-    Return all the strings except comment lines.
+    Drop all comments.
 
     Input:  list of strings
-    Output: list of strings
+    Output: list of string
     """
     comment = re.compile(r'\s*;;.*')
     result = []
@@ -63,100 +49,81 @@ def strip_comments(strings):
     return result
 
 
-def get_pkg_declaration(strings):
+def get_pkgs_names(strings):
     """
-    Return a list containing a packages declaration.
+    Get package names from use-package declarations.
 
     Input:  list of strings
     Output: list of strings
     """
-    pkgs_list = re.compile(r'\(setq [a-z-]+-package.*')
-    pkg_declaration = []
-    started = 0
-    parens_balance = 0
-    for i in strings:
-        if pkgs_list.match(i):
-            started = 1
-        if started:
-            pkg_declaration.append(i)
-            parens_balance += count_parens(i)
-            if not parens_balance:
-                break
-    return pkg_declaration
-
-
-def check_built_in(string):
-    return ':location built-in' in string
+    pkgs = re.findall(r'\(use-package!?\s([\w-]+)', '\n'.join(strings))
+    return pkgs
 
 
 def get_layer(path):
-    return '+' + path.split('+')[1]
-
-
-def parse_complex_pkgs_list(string, path):
     """
-    Return a dictionary with package name as a key and a list containing
-    boolean representing built-in status and layer name as the key's value.
+    Get relevant piece of path to indicate where a given use-package
+    declarations are found.
 
-    Input:  string, string
-    Output: dictionary
+    Input:  string
+    Output: string
     """
-    return {string.split()[0].strip('('):
-            [check_built_in(string), get_layer(path)]}
+    path = path.split('/')[5:-1]
+    return '/'.join(path)
 
 
-def get_pkgs_list(strings, path):
+def get_pkgs_list(names, path):
     """
     Return a list of dictionaries, each of which has a form
-    {package_name: [built-in_status, layer]}.
+    {package_name: [layers]}.
 
     Input:  list of strings, string
-    Output: list of dictionaries
+    Output: dictionary or None
     """
-    if len(strings) == 1:
-        return [{strings[0][strings[0].find("'"):].strip("'()"):
-                [check_built_in(strings), get_layer(path)]}]
+    if not names:
+        return None
     else:
-        pkgs_list = []
-        multiline = ''
-        alpha = re.compile(r'[a-z0-9-]')
-        for i in strings[2:-1]:
-            if alpha.match(i[0]):
-                pkgs_list.append(parse_complex_pkgs_list(i, path))
-            if i[0] == '(' and not count_parens(i):
-                pkgs_list.append(parse_complex_pkgs_list(i, path))
-            if i[0] == '(' and count_parens(i):
-                multiline += i
-            elif multiline and count_parens(i):
-                multiline += ' ' + i
-                pkgs_list.append(parse_complex_pkgs_list(multiline, path))
-                multiline = ''
-            elif multiline:
-                multiline += ' ' + i
+        pkgs_list = dict()
+        for pkg in names:
+            pkgs_list[pkg] = get_layer(path)
         return pkgs_list
 
 
-def flat_list(lst):
+def flat_dict(lst):
     """
-    Return flat dictionary produced from a list of lists of dictionaries.
-    Duplicates are cleverly removed.
+    Return flat dictionary produced from a list of dictionaries.
 
-    Input:  list
+    Input:  list of dictionaries
     Output: dictionary
     """
     result = {}
-    keys_in_result = []
-    for sublst in lst:
-        if sublst:
-            for item in sublst:
-                pkg = list(item.keys())[0]
-                if pkg in keys_in_result:
-                    result[pkg] = [result[pkg][0] or item[pkg][0],
-                                   result[pkg][1] + ', ' + item[pkg][1]]
-                else:
-                    keys_in_result.append(pkg)
-                    result = {**result, **item}
+    for dict_ in lst:
+        if dict_:
+            for k in dict_.keys():
+                result[k] = dict_[k]
     return result
+
+
+def prepare_sources(url, flavor):
+    """
+    Download and extract sources in the current directory.
+
+    Input: string, string
+    """
+    if flavor == 'spacemacs':
+        flavor = 'Spacemacs'
+        filename = 'spacemacs.zip'
+    else:
+        flavor = 'Doom Emacs'
+        filename = 'doomemacs.zip'
+    print(f'Downloading {flavor} source...')
+    with urllib.request.urlopen(url) as response, open(filename,
+                                                       'wb') as out_file:
+        data = response.read()
+        out_file.write(data)
+        with zipfile.ZipFile(filename) as zip_archive:
+            print(f'Extracting {flavor} source...')
+            zip_archive.extractall(path=tmpdirname)
 
 
 def clean_pkg_emacsen_lst(lst):
@@ -179,40 +146,82 @@ def clean_pkg_emacsen_lst(lst):
             clear_lst.append(i[5:])
     return clear_lst
 
+def get_packaged():
+    """
+    Generate a list of ELPA packages already in Debian.
 
-if __name__ == '__main__':
-
-    # Parsing command-line arguments
-    cl_parser = argparse.ArgumentParser(description='Get a list of Emacs \
-                                        packages from Spacemacs source.')
-    cl_parser.add_argument('path', help='path to Spacemacs source code')
-    args = cl_parser.parse_args()
-
-    path = args.path + '/layers/**/packages.el'
-
+    Output: list
+    """
     if os.path.isfile('pkg-emacsen-addons'):
         with open('pkg-emacsen-addons') as f:
             packaged = f.read()[:-1].split('\n')
+            return clean_pkg_emacsen_lst(packaged)
     else:
         sys.stdout.write("Please, generate pkg-emacsen-addons first.\n")
         sys.exit(1)
 
-    packaged = clean_pkg_emacsen_lst(packaged)
 
+def traverse_dir(path):
+    """
+    Recursively walk through path and run parse functions to get package names.
+
+    Input:  string
+    Output: list
+    """
     pkgs_in_layers = []
     for fname in glob.iglob(path, recursive=True):
         with open(fname) as f:
             content = f.read().split('\n')
-        pkg_declaration = get_pkg_declaration(strip_comments(content))
-        pkgs_list = get_pkgs_list(pkg_declaration, fname)
+        pkg_names = get_pkgs_names(strip_comments(content))
+        pkgs_list = get_pkgs_list(pkg_names, fname)
         pkgs_in_layers.append(pkgs_list)
+    return pkgs_in_layers
 
-    all_pkgs = flat_list(pkgs_in_layers)
+
+def combine_dicts(dict_fst, dict_snd):
+    """
+    Combine two dictionaries saving values as tuples.
+
+    Input: dictionary, dictionary
+    Output: dictionary
+    """
+    combined_dict = dict()
+    for k in dict_fst:
+        if k in dict_snd:
+            combined_dict[k] = (dict_fst[k], dict_snd[k])
+        else:
+            combined_dict[k] = (dict_fst[k], '')
+    for k in dict_snd:
+        if k not in combined_dict:
+            combined_dict[k] = ('', dict_snd[k])
+    return combined_dict
+
+
+if __name__ == '__main__':
+
+    packaged = get_packaged()
+
+    space_url = 'https://github.com/syl20bnr/spacemacs/archive/develop.zip'
+    doom_url = 'https://github.com/hlissner/doom-emacs/archive/develop.zip'
+
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        print('Created temporary directory:', tmpdirname)
+        os.chdir(tmpdirname)
+        prepare_sources(space_url, 'spacemacs')
+        prepare_sources(doom_url, 'doomemacs')
+
+        space_path = tmpdirname + '/spacemacs-develop/layers/**/packages.el'
+        doom_path = tmpdirname + '/doom-emacs-develop/modules/**/config.el'
+
+        pkgs_in_space = flat_dict(traverse_dir(space_path))
+        pkgs_in_doom = flat_dict(traverse_dir(doom_path))
+
+    all_pkgs = combine_dicts(pkgs_in_space, pkgs_in_doom)
     print('[[!table  data="""')
-    print('Package|Packaged by pkg-emacsen-addons?|Layers')
-    for item in sorted(list(all_pkgs)):
+    print('Package|Packaged by pkg-emacsen-addons?|Spacemacs|Doom Emacs')
+    for item in sorted(all_pkgs.keys()):
         if item in packaged:
-            print(item + '|' + '**DONE**' + '|' + all_pkgs[item][1])
-        elif not all_pkgs[item][0]:
-            print(item + '|' + 'todo' + '|' + all_pkgs[item][1])
+            print(item + '|' + '**DONE**' + '|' + all_pkgs[item][0] + '|' + all_pkgs[item][1])
+        else:
+            print(item + '|' + 'todo' + '|' + all_pkgs[item][0] + '|' + all_pkgs[item][1])
     print('"""]]')
