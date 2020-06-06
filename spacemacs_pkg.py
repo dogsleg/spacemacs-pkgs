@@ -54,29 +54,6 @@ def strip_comments(strings):
     return result
 
 
-def get_pkgs_names(strings):
-    """
-    Get package names from use-package declarations.
-
-    Input:  list of strings
-    Output: list of strings
-    """
-    pkgs = re.findall(r'\(use-package!?\s([\w-]+)', '\n'.join(strings))
-    return pkgs
-
-
-def get_layer(path):
-    """
-    Get relevant piece of path to indicate where a given use-package
-    declarations are found.
-
-    Input:  string
-    Output: string
-    """
-    path = path.split('/')[5:-1]
-    return '/'.join(path)
-
-
 def get_pkgs_list(names, path):
     """
     Return a list of dictionaries, each of which has a form
@@ -90,7 +67,7 @@ def get_pkgs_list(names, path):
     else:
         pkgs_list = dict()
         for pkg in names:
-            pkgs_list[pkg] = get_layer(path)
+            pkgs_list[pkg] = '/'.join(path.split('/')[5:-1])
         return pkgs_list
 
 
@@ -177,7 +154,8 @@ def traverse_dir(path):
     for fname in glob.iglob(path, recursive=True):
         with open(fname) as f:
             content = f.read().split('\n')
-        pkg_names = get_pkgs_names(strip_comments(content))
+        pkg_names = re.findall(r'\(use-package!?\s([\w-]+)',
+                               '\n'.join(strip_comments(content)))
         pkgs_list = get_pkgs_list(pkg_names, fname)
         pkgs_in_layers.append(pkgs_list)
     return pkgs_in_layers
