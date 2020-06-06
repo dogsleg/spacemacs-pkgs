@@ -8,7 +8,7 @@
 #
 # See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=828154e
 ###############################################################################
-# Copyright (C) 2017 Lev Lamberov
+# Copyright (C) 2017-2020 Lev Lamberov <dogsleg@debian.org>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
