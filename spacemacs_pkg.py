@@ -23,6 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###############################################################################
 
+import argparse
 import glob
 import os
 import re
@@ -30,6 +31,9 @@ import sys
 import tempfile
 import urllib.request
 import zipfile
+from datetime import datetime
+
+from jinja2 import Environment, FileSystemLoader
 
 __version__ = '0.1.0'
 
@@ -178,26 +182,46 @@ def traverse_dir(path):
     return pkgs_in_layers
 
 
-def combine_dicts(dict_fst, dict_snd):
+def combine_dicts(dict_fst, dict_snd, packaged):
     """
     Combine two dictionaries saving values as tuples.
 
     Input: dictionary, dictionary
-    Output: dictionary
+    Output: list of dictionaries
     """
-    combined_dict = dict()
+    combined = []
     for k in dict_fst:
         if k in dict_snd:
-            combined_dict[k] = (dict_fst[k], dict_snd[k])
+            combined.append({'pkg': k,
+                             'status': 'todo',
+                             'spacemacs': dict_fst[k],
+                             'doomemacs': dict_snd[k]})
         else:
-            combined_dict[k] = (dict_fst[k], '')
-    for k in dict_snd:
-        if k not in combined_dict:
-            combined_dict[k] = ('', dict_snd[k])
-    return combined_dict
+            combined.append({'pkg': k,
+                             'status': 'todo',
+                             'spacemacs': dict_fst[k],
+                             'doomemacs': ''})
+    for k in [key for key in set(dict_snd) - set(dict_fst)]:
+        combined.append({'pkg': k,
+                         'status': 'todo',
+                         'spacemacs': '',
+                         'doomemacs': dict_snd[k]})
+    for k in combined:
+        if k['pkg'] in packaged:
+            k['status'] = 'DONE'
+    combined_sorted = sorted(combined, key=lambda k: k['pkg'])
+    return combined_sorted
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", help="output file")
+    args = parser.parse_args()
+
+    file_loader = FileSystemLoader('templates')
+    env = Environment(loader=file_loader)
+
+    template = env.get_template('index.html')
 
     packaged = get_packaged()
 
@@ -206,9 +230,11 @@ if __name__ == '__main__':
 
     with tempfile.TemporaryDirectory() as tmpdirname:
         print('Created temporary directory:', tmpdirname)
+        current_dir = os.getcwd()
         os.chdir(tmpdirname)
         prepare_sources(space_url, 'spacemacs')
         prepare_sources(doom_url, 'doomemacs')
+        os.chdir(current_dir)
 
         space_path = tmpdirname + '/spacemacs-develop/layers/**/packages.el'
         doom_path = tmpdirname + '/doom-emacs-develop/modules/**/config.el'
@@ -216,12 +242,13 @@ if __name__ == '__main__':
         pkgs_in_space = flat_dict(traverse_dir(space_path))
         pkgs_in_doom = flat_dict(traverse_dir(doom_path))
 
-    all_pkgs = combine_dicts(pkgs_in_space, pkgs_in_doom)
-    print('[[!table  data="""')
-    print('Package|Packaged by pkg-emacsen-addons?|Spacemacs|Doom Emacs')
-    for item in sorted(all_pkgs.keys()):
-        if item in packaged:
-            print(item + '|' + '**DONE**' + '|' + all_pkgs[item][0] + '|' + all_pkgs[item][1])
-        else:
-            print(item + '|' + 'todo' + '|' + all_pkgs[item][0] + '|' + all_pkgs[item][1])
-    print('"""]]')
+    all_pkgs = combine_dicts(pkgs_in_space, pkgs_in_doom, packaged)
+
+    output = template.render(pkgs=all_pkgs, date=datetime.utcnow())
+
+    if args.output:
+        with open(args.output, 'w') as f:
+            print(f'Writing output to {args.output}')
+            f.write(output)
+    else:
+        print(output)
