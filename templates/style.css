@@ -1,0 +1,40 @@
+#packages {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+#packages td, #packages th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#packages tr:nth-child(even){background-color: #f2f2f2;}
+
+#packages tr:hover {background-color: #f5f5f5;}
+
+#packages th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4caf50;
+    color: white;
+}
+
+.done {
+    background-color: #4caf50;
+    font-weight: bold;
+    text-align: center;
+}
+
+.todo {
+    background-color: yellow;
+    text-align: center;
+}
+
+.footnote {
+    background-color: lightgrey;
+    border-style: inset;
+    font-size: x-small;
+    padding: 7px;
+    margin-top: 15px;
+}
