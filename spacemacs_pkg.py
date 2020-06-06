@@ -36,7 +36,7 @@ from datetime import datetime
 
 from jinja2 import Environment, FileSystemLoader
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 
 def strip_comments(strings):
