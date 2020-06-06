@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ###############################################################################
-# spacemacs-pkgs -- get a list of Emacs packages from Spacemacs source.
+# spacemacs-pkgs -- get a list of Emacs packages from Spacemacs and
+# Doom Emacs source.
 ###############################################################################
 # This script is written to help with packaging Emacs packages used in
 # Spacemacs for Debian.
