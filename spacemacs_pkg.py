@@ -161,7 +161,7 @@ def traverse_dir(path):
     return pkgs_in_layers
 
 
-def combine_dicts(dict_fst, dict_snd, packaged):
+def combine_dicts(dict_fst, dict_snd):
     """
     Combine two dictionaries saving values as tuples.
 
@@ -185,11 +185,17 @@ def combine_dicts(dict_fst, dict_snd, packaged):
                          'status': 'todo',
                          'spacemacs': '',
                          'doomemacs': dict_snd[k]})
-    for k in combined:
+    return combined
+
+
+def mark_as_done(lst, packaged):
+    done = 0
+    for k in lst:
         if k['pkg'] in packaged:
             k['status'] = 'DONE'
-    combined_sorted = sorted(combined, key=lambda k: k['pkg'])
-    return combined_sorted
+            done += 1
+    pkgs_sorted = sorted(lst, key=lambda k: k['pkg'])
+    return (pkgs_sorted, done)
 
 
 if __name__ == '__main__':
@@ -221,9 +227,16 @@ if __name__ == '__main__':
         pkgs_in_space = flat_dict(traverse_dir(space_path))
         pkgs_in_doom = flat_dict(traverse_dir(doom_path))
 
-    all_pkgs = combine_dicts(pkgs_in_space, pkgs_in_doom, packaged)
+    all_pkgs, done_pkgs = mark_as_done(combine_dicts(pkgs_in_space,
+                                                     pkgs_in_doom), packaged)
 
-    output = template.render(pkgs=all_pkgs, date=datetime.utcnow())
+    statistics = {'spacemacs': len(pkgs_in_space),
+                  'doomemacs': len(pkgs_in_doom),
+                  'done': done_pkgs}
+
+    output = template.render(pkgs=all_pkgs,
+                             statistics=statistics,
+                             date=datetime.utcnow())
 
     if args.output:
         with open(args.output, 'w') as f:
