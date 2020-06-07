@@ -72,17 +72,19 @@ def get_pkgs_list(names, path):
         return pkgs_list
 
 
-def flat_dict(lst):
+def finalize_dict(lst, builtins):
     """
-    Return flat dictionary produced from a list of dictionaries.
+    Make flat dictionary a list of dictionaries and drop built-in packages.
 
-    Input:  list of dictionaries
+    Input:  list of dictionaries, list of strings
     Output: dictionary
     """
     result = {}
     for dict_ in lst:
         if dict_:
             for k in dict_.keys():
+                if k in builtins:
+                    continue
                 result[k] = dict_[k]
     return result
 
@@ -251,8 +253,8 @@ if __name__ == '__main__':
         space_path = tmpdirname + '/spacemacs-develop/layers/**/packages.el'
         doom_path = tmpdirname + '/doom-emacs-develop/modules/**/config.el'
 
-        pkgs_in_space = flat_dict(traverse_dir(space_path))
-        pkgs_in_doom = flat_dict(traverse_dir(doom_path))
+        pkgs_in_space = finalize_dict(traverse_dir(space_path), builtins)
+        pkgs_in_doom = finalize_dict(traverse_dir(doom_path), builtins)
 
     all_pkgs, done_pkgs = mark_as_done(combine_dicts(pkgs_in_space,
                                                      pkgs_in_doom), packaged)
