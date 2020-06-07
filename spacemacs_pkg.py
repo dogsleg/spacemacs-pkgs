@@ -34,6 +34,7 @@ import urllib.request
 import zipfile
 from datetime import datetime
 
+from apt.debfile import DebPackage
 from jinja2 import Environment, FileSystemLoader
 
 __version__ = '0.1.1'
@@ -128,6 +129,31 @@ def clean_pkg_emacsen_lst(lst):
             clear_lst.append(i[5:])
     return clear_lst
 
+
+def get_builtin():
+    """
+    Get the full package name of emacs-el in unstable, download it and get
+    names of built-in packages.
+
+    Output: list of strings
+    """
+    emacs_page = urllib.request.urlopen('https://packages.debian.org/sid/all/emacs-el/download').read().decode()
+    emacs_pkgname = re.findall(r'(emacs-el_.+_all.deb)', emacs_page)[0]
+    url = 'http://ftp.us.debian.org/debian/pool/main/e/emacs/' + emacs_pkgname
+    print(f'Downloading {emacs_pkgname}...')
+    with urllib.request.urlopen(url) as response, open(emacs_pkgname,
+                                                       'wb') as out_file:
+        data = response.read()
+        out_file.write(data)
+        emacs_package = DebPackage(emacs_pkgname)
+        builtins = []
+        for pkg in emacs_package.filelist:
+            if '.el' in pkg:
+                builtin = pkg.split('/')[-1]
+                builtins.append(builtin.split('.')[0])
+        return builtins
+
+
 def get_packaged():
     """
     Generate a list of ELPA packages already in Debian.
@@ -217,6 +243,7 @@ if __name__ == '__main__':
         print('Created temporary directory:', tmpdirname)
         current_dir = os.getcwd()
         os.chdir(tmpdirname)
+        builtins = get_builtin()
         prepare_sources(space_url, 'spacemacs')
         prepare_sources(doom_url, 'doomemacs')
         os.chdir(current_dir)
