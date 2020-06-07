@@ -37,7 +37,7 @@ from datetime import datetime
 from apt.debfile import DebPackage
 from jinja2 import Environment, FileSystemLoader
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 
 def strip_comments(strings):
