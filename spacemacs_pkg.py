@@ -265,7 +265,8 @@ if __name__ == '__main__':
 
     output = template.render(pkgs=all_pkgs,
                              statistics=statistics,
-                             date=datetime.utcnow())
+                             date=datetime.utcnow(),
+                             version=__version__)
 
     if args.output:
         with open(args.output, 'w') as f:
