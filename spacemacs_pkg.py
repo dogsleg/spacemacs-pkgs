@@ -206,7 +206,7 @@ if __name__ == '__main__':
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
 
-    template = env.get_template('index.html')
+    template = env.get_template('index.template')
 
     packaged = get_packaged()
 
