@@ -1,3 +1,4 @@
+import os
 import sqlite3
 
 
@@ -133,3 +134,9 @@ class Cache():
         for suit in ['Spacemacs', 'DoomEmacs']:
             command = f'DELETE FROM {suit}'
             self._cur.execute(command)
+
+    def close(self):
+        self.clean_db()
+        self._conn.commit()
+        self._conn.close()
+        os.remove('test.sqlite')
