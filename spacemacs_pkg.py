@@ -37,6 +37,8 @@ from datetime import datetime
 from apt.debfile import DebPackage
 from jinja2 import Environment, FileSystemLoader
 
+from cache import Cache
+
 __version__ = '0.1.2'
 
 
